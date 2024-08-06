@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {           
+            padding: 20px;
+            margin: 20px;
+            background: #ff6600;
+            border:2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            $("div").width(150).height(150);
+            console.log("width " + $("div").width()); 
+            console.log("height " + $("div").height());
+            console.log("innerWidth " + $("div").innerWidth()); // innerWidth -> padding까지
+            console.log("innerHeight " + $("div").innerHeight());
+            console.log("outerWidth " + $("div").outerWidth()); // outerWidth -> border까지 , outerWidth(true) -> margin까지
+            console.log("outerHeight " + $("div").outerHeight(true));
+        })
+    </script>
+    <div>내용</div>
+</body>
+</html>

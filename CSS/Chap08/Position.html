@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            width: 500px;
+            height: 200px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            line-height: 2;
+        }
+        #static{
+            position:static;
+        }
+        #relative-1{
+            position:relative;
+        }
+        #relative-2{
+            position:relative;
+            left:100px; /*static 위치에서 왼쪽으로 100px 떨어지게*/
+            top:-50px; /*위쪽에서 -50px 떨어지게(위로이동)*/
+        }
+        #fixed{
+            width: 100px;
+            height: 100px;
+            background-color: #222;
+            position:fixed;
+            right: 30px;
+            top:30px
+        }
+    </style>
+</head>
+<body>
+    <p id="static"></p>    
+    <p id="rerlative-1"></p>    
+    <p id="relative-2"></p>    
+    <p id="fixed"></p>    
+</body>
+</html>

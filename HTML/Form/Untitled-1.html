@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="image"] {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+    <h1>회원 가입을 환영합니다^^</h1>
+    <form action="">
+        <fieldset>
+            <legend>사용자 정보</legend>
+            <ul>
+                <li>
+                    <label for="user_id">아이디 : </label>
+                    <input type="text" id="user_id">
+                    <input type="image" src="../Image/44C98F38-069B-4C54-A8E4-1937641A61A8.jpg" alt="로그인" width="">
+                </li>
+                <li>
+                    <label for="user_mail">이메일 : </label>
+                    <input type="email" id="user_mail">
+                </li>
+                <li>
+                    <label for="user_pwd">비밀번호 : </label>
+                    <input type="password" id="user_pwd" size="18">
+                </li>
+                <li>
+                    <label for="pwd_check">비밀번호 확인 : </label>
+                    <input type="password" id="pwd_check" size="13">
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>이벤트와 새로운 소식</legend>
+            <label><input type="radio" name="mail" value="true" checked>메일 수신</label>
+            <label><input type="radio" name="mail" value="false">메일 수신 안 함</label>
+        </fieldset>
+        <p></p>
+        <input type="submit" value="가입하기"> <!-- 입력한 값을 action으로 전송 -->
+        <input type="reset" value="취소"> <!-- reset : 입력한 모든 값을 지워버림 -->
+    </fieldset>
+    </form>    
+</body>
+</html>

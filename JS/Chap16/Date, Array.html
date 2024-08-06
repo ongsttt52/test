@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-size: 2em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*Date 객체의 인스턴스를 생성하여 now 변수에 저장*/
+        var now = new Date();
+        document.write("현재 시각은 " +  now);
+        //Date 객체의 메서드를 호출
+        document.write("현재 시각은 " + now.toLocaleString);
+
+        // Array객체 (내장객체)
+        // 일반배열 선언
+        var number = ['one', 'two', 'three', 'four'];
+        for(let i=0; i<number.length; i++) {
+            console.log(number[i]+" ");
+        }
+        // Array 이용하여 배열 선언
+        var number2 = Array('one', 'two', 'three', 'four');
+        for(let i=0; i<number2.length; i++) {
+            console.log(number2[i] + " ");
+        }
+
+    </script>
+</body>
+</html>

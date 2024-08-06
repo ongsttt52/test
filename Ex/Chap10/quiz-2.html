@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>연습문제 2</title>  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .top-menu {
+      margin:50px auto;
+      padding:0;
+      list-style:none;
+      width:605px;
+      height:35px;
+      box-shadow:0 3px 4px #8b8b8b;
+      background-color:#dadada;
+    }
+    .top-menu li {
+      float:left;
+      border-right:1px solid #929292;
+      width:100px;
+      text-align: center;
+      line-height: 35px;
+     
+    }
+    .top-menu li:hover {
+      background-color: #555;;
+    }
+    .top-menu li:not(:last-child) a:hover{
+      background-color: gray;
+      color:white;
+    }
+    /*li의 마지막 자손이 아닌 모든 자손의 자손 a태그에 hover가 일어났을때 적용*/
+    .top-menu a{
+      text-decoration: none;
+      color:black;
+      display:block;
+      width:100%;
+      height: 100%;;
+    }
+    /*하이퍼링크를 블록 전체에 할당시키고 싶다면 display:block으로 인라인요소인 a태그를 블록요소로 바꿔준 뒤 너비와 높이를 부모의 100%로 지정하면 된다.*/
+    .top-menu a:hover{
+      color:white;
+    }
+    .top-menu li:last-child {
+      border:none;
+    }
+    .top-menu li:last-child:hover {
+      background-color: #b30000;
+      color:#fff; 
+    }
+    .top-menu li a{
+      transition:0.5s ease-in;
+      
+    }
+    
+    
+
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="top-menu">
+      <li><a href="#">메뉴1</a></li>
+      <li><a href="#">메뉴2</a></li>
+      <li><a href="#">메뉴3</a></li>
+      <li><a href="#">메뉴4</a></li>
+      <li><a href="#">메뉴5</a></li>
+      <li><a href="#">메뉴6</a></li>
+    </ul>
+   </nav>
+</body>
+</html>

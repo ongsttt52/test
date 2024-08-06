@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            padding:10px;            
+            background-color: #0C3268;
+            color: rgb(243,243,243);
+            margin-top: 80px;
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+            text-shadow: 5px 5px 5px black;
+            line-height: 40px;
+        }
+        strong {
+            font-size: 50px;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var string = prompt("관심 세션을 선택해 주세요. 1-마케팅. 2-개발. 3-디자인");
+        switch(string) {
+            case "1":
+            case "마케팅":
+            case "1-마케팅": document.write("<p>마케팅 세션은 <strong>205호</strong>에서 진행됩니다.</p>"); break;
+
+            case "2":
+            case "개발":
+            case "2-개발": document.write("<p>개발 세션은 <strong>203호</strong>에서 진행됩니다.</p>"); break;
+
+            case "3":
+            case "디자인":
+            case "3-디자인": document.write("<p>디자인 세션은 <strong>201호</strong>에서 진행됩니다.</p>");
+
+            default : alert("잘못 입력했습니다");
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        addNum(); // 웹 브라우저에서는 선언부를 먼저 읽기때문에 흐름에 상관없이 호출해도 됨
+        function addNum() {
+            var num1 = 2;
+            var num2 = 3;
+            var sum = num1+num2;
+            alert(num1 + "+" + num2 + "=" + sum);
+        }
+        addNum();
+        
+
+        var x = 10;
+        function displayNum() {
+            // var y; -> 변수 y가 호이스팅됨 (끌어올려짐)  -> 오류가 발생하지 않고 undefined 상태가 됨
+            console.log("x is " + x);
+            console.log("y is " + y);
+            var y = 20;
+        }
+        displayNum();
+    </script>
+</body>
+</html>

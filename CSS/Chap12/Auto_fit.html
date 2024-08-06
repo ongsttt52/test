@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper1{
+            display: grid;
+            /*화면을 꽉 채울만큼 칼럼 너비를 늘려서 표시*/
+            grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+            grid-template-rows: repeat(2, 200px);
+            grid-gap: 20px;
+            margin-bottom:20px;
+            
+        }
+        #wrapper2{
+            display: grid;
+            /*칼럼 너비를 최소 너비에 맞춰서 표시*/
+            grid-template-columns: repeat(auto-fill,minmax(50px,1fr));
+        }
+        h1 {
+            font-size: 24px;
+        }
+        .items{
+            padding:15px;
+            background-color: #eee;
+            overflow:scroll;
+        }
+        .items:nth-child(odd) {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <h1>auto-fit일 때</h1>
+    <div id="wrapper1">            
+      <div class="items">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta nesciunt magni voluptatem.</div>
+      <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+      <div class="items">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius nulla corrupti porro!</div>
+      <div class="items">Lorem ipsum dolor sit.</div>
+      <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, quos!</div>
+      <div class="items">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro odit quam sit.</div>
+    </div>
+    <h1>auto-fill일 때</h1>
+    <div id="wrapper2">            
+      <div class="items">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta nesciunt magni voluptatem.</div>
+      <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+      <div class="items">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius nulla corrupti porro!</div>
+      <div class="items">Lorem ipsum dolor sit.</div>
+      <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, quos!</div>
+      <div class="items">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro odit quam sit.</div>
+    </div>
+</body>
+</html>

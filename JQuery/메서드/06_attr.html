@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="site">
+        <a href="http://www.daum.net" target="_blank">다음</a>
+        <a href="http://www.naver.com" target="_blank">네이버</a>
+        <a href="http://www.nate.com" target="_blank">네이트</a>
+    </div>
+    <script>
+        $(document).ready(function() {
+            console.log($("#site > a:eq(0)").attr("href")); // eq(0) : 인덱스가 0번인 요소
+            $("#site > a:eq(1)").attr("href", "http://m.naver.com").text("네이버 모바일");
+            $("#site a").attr("title", function() {
+                return "새창";
+            });
+        });
+    </script>
+</body>
+</html>

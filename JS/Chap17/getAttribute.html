@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 300px;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <img src = "/Media/Images/Tree_Slow.jpg" id="Ts" onclick="displaySrc()">
+    <script>
+        function displaySrc() {
+            var Tree = document.querySelector("#Ts");
+            alert("이미지 소스 : " + Tree.getAttribute("src"));
+        }
+        //getAtrribute() 메서드 : 속성 노드의 값을 가져옴
+        //setAtrribute() 메서드 : 속성 노드의 값을 바꿈
+    </script>
+</body>
+</html>

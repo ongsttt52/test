@@ -1,0 +1,61 @@
+#searchBar {
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 99%;
+    height: 130px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background: rgb(73,73,73);
+    background: linear-gradient(180deg, rgba(73,73,73,1) 0%, rgba(56,56,56,1) 0%, rgba(18,18,18,1) 100%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}   
+#searchBtn {
+    width: 130px;
+    margin-left: 3px;
+    padding: 10px 0;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    color:white;
+    font-size: 20px;
+    transition: width 0.3s ease; /*width에 변화가 일어날 때 0.3s의 duration이 일어나게 함*/
+}
+#searchBtn:hover {
+    border-color:white;
+}
+#searchBtnInput {
+    display: none;
+    width: 700px;
+    height: 50%;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 19px;
+    color: white;
+}
+#searchBtnInput::-webkit-search-cancel-button {
+    -webkit-appearance: none; /*input search의 기본 아이콘 (clear) 안보이게 만들기*/
+} 
+#searchBar div {   
+    height: 50%;
+    display:flex;
+    align-items: center;
+}
+#searchBar div:nth-of-type(2) button{
+    width: 50px;
+    height: 30px;
+    margin-left: 10px;
+    background-color: #474747;
+    border-radius: 20px;
+    color: white;
+    font-weight: 450;
+}
+#searchBar div:nth-of-type(2) button:hover {
+    background-color: #707070;
+    transition-duration: 0.3s;
+}
+

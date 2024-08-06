@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>춘식이 생일파티</h1>
+        <img src="/Media/Images/20240719095159_6f3758215a884bc29005d9ddfb74143d.jpg">
+        <p><a href="More.html" onclick="loadUrl(this.href); return false;">자세히보기</a></p>
+        <!--return false : 하이퍼링크의 기본 링크이동을 안하도록 함-->
+        <!--this.href : More.html을 뜻함, More.html을 매개변수로 loadUrl 함수 실행-->
+    </div>
+    <script>
+        function loadUrl(url) {
+            window.opener.location = url;
+            //Main.html의 이동경로를 매개변수 url로 바꿈
+            window.close();
+            //팝업 창 닫기
+        } 
+    </script>
+</body>
+</html>

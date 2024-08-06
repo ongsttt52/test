@@ -1,0 +1,17 @@
+.user-img {
+    width:50%;
+    height: auto;
+    margin:0 auto;
+    position:relative;
+}
+.user-text {
+  position:absolute;
+  top:70%;
+  left:50%;
+  width:50%;
+  height: 25%;
+  transform: translate(-50%, -50%);
+  text-align:left;
+  background-color: rgb(0,0,0,0.7);
+  
+}

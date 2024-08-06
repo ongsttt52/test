@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>hover()</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .pic {
+            background: #ccc;
+        }
+        .pic img {
+            transform: translateX(-200px);
+            transition: all 0.5s ease; /* -> 모든 요소에 트랜지션 이벤트 설정 */
+            vertical-align: top;
+        }
+        .pic img.on {
+            transform: translateX(0); /* -> 이미지가 화면에서 보임 (translateX(-200) -> translateX(0)) */
+        }
+        button {
+            width: 200px;
+            height: 50px;
+            border: none;
+            background: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("button").hover(function() {
+                $(".pic img").toggleClass("on");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="pic"><img src="4.jpg" alt="jQuery"></div>
+    <button>hover 이벤트</button>
+</body>
+</html>

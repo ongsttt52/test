@@ -1,0 +1,14 @@
+.style1 {
+    text-align: center;
+}
+.tableset1 {
+    table,td,th {
+        border:1px solid black;
+        margin-left:auto;
+        margin-right:auto;
+        border-collapse: collapse;
+    }
+    td,th {
+        padding:10px 20px;
+    }
+}

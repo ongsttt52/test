@@ -1,0 +1,15 @@
+fieldset {
+    border : 1px solid black; 
+   }
+ul {
+    list-style-type: none;
+    line-height: 2em;
+}
+.font1 {
+    font-size:large;
+    font-weight:1000; 
+    color:#ad3000
+}
+.font2 {
+    font-size: 15px;
+}

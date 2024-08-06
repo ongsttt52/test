@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        div {
+            display: flex;
+            justify-content: center;
+        }
+        table,td{
+            border:1px solid rgb(155, 155, 155);
+            border-collapse: collapse;
+        }
+        td{
+            padding:5px;
+            font-size:0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>자리배치도</h1>
+    <div>
+        <script>
+            // 입장객과 한 줄에 앉을 사람 수를 입력받고 필요한 줄 수를 출력하기
+            var num = prompt("입장객 수를 입력해주세요");
+            var rnum = prompt("한 줄에 앉을 사람 수를 입력해주세요")
+            var rowNum;
+            var tableNum;
+            // if문 이용
+            if(num%rnum==0) rowNum=num/rnum;
+            else rowNum=parseInt(num/rnum)+1;
+            document.write("<table>");
+            outter:for(i1=0; i1<rowNum; i1++) {
+                document.write("<tr>");
+                for(i2=1; i2<=rnum; i2++) {
+                    tableNum=(i1*rnum)+i2;
+                    document.write("<td> 좌석" + tableNum +"</td>");
+                    if(tableNum==num) break outter;
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+            // // 올림함수 Math.ceil() 이용
+            // rowNum = Math.ceil(num/rnum);
+            // alert("필요한 줄 2 : " + rowNum);
+        </script>
+    </div>
+</body>
+</html>

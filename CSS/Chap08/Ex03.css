@@ -1,0 +1,8 @@
+ul{
+    list-style-type: none;
+}
+li{
+    width:5%;
+    float:left;
+    text-align: center;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+    <body>
+        <script>
+            $(document).ready(function() {
+                $("#m1 > span:first-child").css("border", "2px solid red")
+                $("#m1 > span:last-child").css("border", "2px solid red")
+                $("#m2 > span:first-of-type").css("border", "2px solid orange")
+                $("#m2 > span:last-of-type").css("border", "2px solid orange")
+                $("#m3 > span:nth-child(1)").css("border", "2px solid yellow")
+                $("#m3 > span:nth-last-child(1)").css("border", "2px solid yellow")
+                $("#m4 > span:nth-of-type(1)").css("border", "2px solid green")
+                $("#m5 > span:nth-last-of-type(1)").css("border", "2px solid green")
+                $("#m6 > span:only-child").css("border", "2px solid blue") // only-child -> span 이외의 전체 요소를 전부 포함해서 오직 하나만 있을때 적용됨
+                $("#m7 > span:only-of-type").css("border", "2px solid navy") // only-of-type -> span타입이 오직 하나만 있을때 적용됨
+            })
+            //contains : 
+            // empty:
+            // parent: 
+            // has: 
+        </script>
+        <div id="m1">
+            <span>내용1_1</span>
+            <span>내용1_2</span>
+            <span>내용1_3</span>
+        </div>
+        <div id="m2">
+            <strong>내용2_1</strong>
+            <span>내용2_2</span>
+            <strong>내용2_3</strong>
+            <span>내용2_4</span>
+        </div>
+        <div id="m3">
+            <span>내용3_1</span>
+            <span>내용3_2</span>
+            <span>내용3_3</span>
+        </div>
+        <div id="m4">
+            <strong>내용4_1</strong>
+            <span>내용4_2</span>
+            <strong>내용4_3</strong>
+            <span>내용4_4</span>
+            <strong>내용4_5</strong>
+            <span>내용4_6</span>
+        </div>
+        <div id="m5">
+            <!-- 모든 요소를 기준으로 봤을 때 자식이 하나뿐이어야 선택됨 -->
+            <span>내용5_1</span>
+            <strong>내용6_1</strong>
+        </div>
+        <div id="m6">
+            <strong>내용6_1</strong>
+            <!-- 유일한 자식 요소가 span 태그가 이므로 실행됨 -->
+            <span>내용6_2</span>
+        </div>
+    </body>
+</html>

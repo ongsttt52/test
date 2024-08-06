@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border-bottom : 3px solid black ;
+            margin-bottom: 20px;
+        }
+        .round {
+            border : 3px solid black ;
+            width: 200px;
+            height: 200px;
+            border-radius: 50px; /*반지름이 50px인 원만큼 둥글게*/
+            border-radius: 50%; /*50%로 설정하면 원이 됨 = (길이/2)+border-width*/
+            border-top-left-radius: 20px; /*왼쪽 위 꼭짓점만 둥글게*/
+        }
+    </style>
+</head>
+<body>
+    <div><h1>밑줄</h1></div>
+    <div class="round"></div>
+</body>
+</html>

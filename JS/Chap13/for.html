@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size:1.5em;
+            line-height: 2;
+            text-align: center;
+        }
+        .container {
+            display:flex;
+            justify-content: center;
+            margin:0 auto;
+        }
+        .div1 {
+            margin: 20px;
+            padding : 20px;
+            border:1px solid rgb(177, 177, 177);
+            float:left;
+        }
+    </style>
+</head>
+<body>
+    <h1>구구단</h1>
+        <div class="container">
+            <script>
+                for(i1=1; i1<=9; i1++) {
+                    document.write("<div class=div1>");
+                    document.write("<h3>" + i1 + "단</h3>");
+                    for(i2=1; i2<=9; i2++) {
+                        document.write(i1 + " X " + i2 + " = " + i1*i2 + "<br>");
+                    }
+                    document.write("</div>");
+                }
+            </script>
+        </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width:500px;
+            height: 300px;
+            border-radius: 10px;
+        }
+        .grad{
+            background: #1f4037;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #99f2c8, #3b7a69);  /* Chrome 10-25, Safari 5.1-6  /  예전 버전 브라우저에서 사용*/ 
+            background: linear-gradient(40deg, #99f2c8, #1a7a62); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        .grad1 { 
+  		background: #f00; /* CSS3를 지원하지 않는 브라우저용 */
+        /*0도(위쪽으로) */
+  		background: linear-gradient(0deg, #f00, #fff); 
+        float:left;
+        }
+        .grad2 { 
+            background: #f00; /* CSS3를 지원하지 않는 브라우저용 */
+            /*90도(오른쪽으로) */
+            background: linear-gradient(90deg, #f00, #fff); 
+        float:left;
+        }
+        .grad3 { 
+            background: #f00; /* CSS3를 지원하지 않는 브라우저용 */
+            /*180도(아래쪽으로) */
+            background: linear-gradient(180deg, #f00, #fff);
+        float:left; 
+        }
+        .grad4 { 
+            background: #f00; /* CSS3를 지원하지 않는 브라우저용 */
+            /*270도(왼쪽으로) */
+            background: linear-gradient(270deg, #f00, #fff);
+        float:left; 
+        }
+    </style>
+</head>
+<body>
+    <div class="grad"></div>    
+    <div class="grad1"></div>    
+    <div class="grad2"></div>    
+    <div class="grad3"></div>    
+    <div class="grad4"></div>    
+</body>
+</html>

@@ -1,0 +1,10 @@
+input[required] {
+    border:red;
+}
+input[read-only] {
+    border: 1px solid red;
+}
+
+input {
+    border: 1px solid
+}

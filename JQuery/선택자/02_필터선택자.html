@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>제목1</h1>
+    <h2>제목2</h2>
+    <table>
+        <caption>기본 필터 선택자</caption>
+        <colgroup>
+            <col>
+            <col>
+            <col>
+        </colgroup>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+            </tr>
+        </tbody>
+    </table>
+    <ul>
+        <li class="bg">내용1</li>
+        <li class="bg">내용2</li>
+        <li class="bg">내용3</li>
+        <li>내용4</li>
+    </ul>
+    <script>
+        $(document).ready(function() {
+            $("tr:even").css("background", "red");
+            $("tr:odd").css("background", "orange");
+            $("tr:first").css("background", "yellow");
+            $("tr:last").css("background", "green");
+            $(":header").css("background", "blue");
+            $("li:eq(0)").css("background", "navy"); // li 중에서 0번째 인덱스만 선택 (equal)
+            $("li:gt(0)").css("background", "purple"); // li중에서 인덱스 0보다 큰 요소 선택 (greater than)
+            $("li:lt(3)").css("border", "4px solid gray"); // 인덱스 3보다 작은 인덱스 선택 (less than)
+            $(":root").css("background", "lightgray");
+            
+            (function upDown() {
+                $("h2").slideToggle(1000, upDown); // h2요소를 1초에 한번씩 upDown시킴
+            })();
+            $(":animated").css("border", "4px solid darkred"); // :animated 는 애니메이션이 적용되서 움직이는 요소를 셀렉트
+        });
+    </script>
+</body>
+</html>

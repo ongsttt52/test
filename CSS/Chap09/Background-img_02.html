@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        html,body{
+            height: 100%;
+            width: 100%; /*body태그의 너비를 설정해야 자식요소인 bg의 너비를 %로 설정 가능*/
+        }
+        .bg{
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(gray, gray), url(/HTML/Image/Tree_Slow.jpg);
+            background-clip: border-box, border-box;
+            background-repeat: no-repeat,repeat-x;
+            background-position: 0 top, left 40%;
+            background-size: 100% 40%, 100% 100%; /*bg의 높너비를 기준으로 %만큼 차지함*/
+        }
+        h1{
+            font-size: 20px;
+            padding-top: 50ox;
+            padding-left: 25px;
+        }
+        p{
+            font-size: 16px;
+            line-height: 25px;
+            padding-left: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <h1>웹 디자인 트렌드를 따라잡는 비법 대공개!</h1>
+        <p>그래픽 프로그램으로...</p>
+    </div>
+</body>
+</html>

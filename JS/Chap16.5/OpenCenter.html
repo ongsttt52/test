@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 화면 가운데에 팝업창 띄우기
+        function openCenter(doc,win,w,h) {
+            var left = (screen.availWidth-w) / 2;
+            var top = (screen.availHeight-h) / 2;
+            var opt = "left=" + left + ", top=" + top + ", width=" + w + ", height="+h;
+            window.open(doc,win,opt);
+        }
+        openCenter("notice.html", "pop", 500, 400);
+    </script>
+</body>
+</html>

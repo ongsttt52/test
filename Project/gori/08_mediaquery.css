@@ -1,0 +1,16 @@
+@media screen and (max-width: 1880px) {
+    #center_header {
+        height: 150px;
+    }
+}
+@media screen and (max-width: 1370px) {
+    #searchBar {
+        width: 565px
+    }
+    #center {
+        width: 565px;
+    }
+    #center_header {
+        height: 150px;
+    }
+}

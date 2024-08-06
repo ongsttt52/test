@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            float:left;
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+            background: url(/HTML/Image/Tree_Slow.jpg) no-repeat center;
+            border: 5px solid black;
+        }   
+        div {
+            width:1050px;
+            height: 1000px;
+        }
+        div :first-child { /*div뒤에 공백이 없으면 그냥 div에 적용되어 버림*/ 
+            border:2px solid red;
+        }
+        img:first-child{
+            border:2px solid red;
+        }   
+        /*각 부모의 첫번째 자식이 이미지이면 적용 -> 4에 적용*/
+        img:first-of-type {
+            border:2px solid red;
+        }
+        /*각 부모의 첫번째 이미지타입에게 적용 -> 1,4에 적용*/
+    </style>
+</head>
+<body>
+    <h1>123</h1>
+    <img src="/HTML/Image/Tree_Slowjpg"> <!--1-->
+    <img src="/HTML/Image/Tree_Slow.jpg"> <!--2-->
+    <img src="/HTML/Image/Tree_Slow.jpg"> <!--3-->
+
+    <div>
+        <img src="/HTML/Image/Tree_Slowjpg"> <!--4-->
+        <img src="/HTML/Image/Tree_Slow.jpg"> <!--5-->
+        <img src="/HTML/Image/Tree_Slow.jpg"> <!--6-->
+    </div>
+</body>
+</html>

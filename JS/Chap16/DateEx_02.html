@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var date=prompt("날짜를 입력하세요. (yyyy MM hh)");
+        function getWeekDay(date) {
+            let d = new Date(date);
+            var arr = date.split(" ");
+            switch(d.getDay()) {
+                case 0: day = "일요일"; break;
+                case 1: day = "월요일"; break;
+                case 2: day = "화요일"; break;
+                case 3: day = "수요일"; break;
+                case 4: day = "목요일"; break;
+                case 5: day = "금요일"; break;
+                case 6: day = "토요일";
+            }
+            document.write(arr[0] + "년 " + arr[1] + "월 " + arr[2] + "일은 " + day + "입니다.")
+        }
+        getWeekDay(date);
+    </script>
+</body>
+</html>

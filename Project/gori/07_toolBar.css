@@ -1,0 +1,232 @@
+#toolBar {
+    display:grid;
+    position:fixed;
+    bottom:0;
+    left: 0;
+    grid-template-columns: 1fr 50vw 1fr;
+    grid-column: 1/4;
+    grid-row: 3/4;
+    width: 100%;   
+    height: 90px;
+    background: #000000;
+}
+#toolBar a:hover {
+    text-decoration: underline;
+}
+#toolBar div button:hover {
+    color: white;
+}
+#toolBar-left {
+    display:flex;
+    justify-content: start;
+    grid-column: 1/2;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 10px;
+}
+#toolBar-left-info {
+    display:flex;
+    align-items: center;
+    width: 300px;
+    height: 80px;
+    margin: 5px 15px;
+}
+#toolBar-left-info img {
+    width: 62px;
+    height: 62px;
+    border-radius: 6px;
+}
+#toolBar-left-info>div {
+    margin-left: 15px;
+}
+#toolBar-left-info>div>p {
+    height: 20px;
+    line-height: 20px;
+    font-size: 15px;
+
+}
+#toolBar-left-info>div>p:last-of-type>a {
+    color: rgb(180, 180, 180);
+    font-size: 13px;
+}
+#toolBar-left-button{
+    display:flex;
+    justify-content: start;
+    align-items: center;
+    height: 100%;
+    padding-bottom:3px;
+}
+#toolBar-left-button div {
+    border:1px solid rgba(110, 110, 110, 0.5);
+    height: 30%;
+    margin-right: 10px;
+}
+#toolBar-left-button button:first-of-type {
+    width: 50px;
+    height: 50px;
+    color:#adadad;
+    font-size: 22px;
+    margin-bottom: 2px;
+}
+#toolBar-left-button button:not(:first-of-type) {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    border: 2px solid #adadad;
+    border-radius: 50%;
+    color: #adadad;
+    font-size: 17px;
+    line-height: 10px;
+}
+#toolBar-left-button button:hover {
+    border-color: white;
+    color: white;
+    transform: scale(1.1, 1.1);
+}
+#toolBar-center {
+    grid-column: 2/3;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+#toolBar-center-button {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+#toolBar-center-button button:not(:nth-of-type(3)) {
+    background-color: #000000;
+    width: 30px;
+    height: 30px;
+    color:#adadad;
+    font-size: 18px;
+    margin:0 5px;
+}
+#toolBar-center-button button:not(:nth-of-type(3)):hover {
+    transform: scale(1.02, 1.02);
+}
+#toolBar-playBtn {
+    background-color: #000000;
+    border-color: transparent;
+    margin:0 10px;
+    font-size: 38px;
+    line-height: 10px;
+    border-radius: 50%;
+}
+#toolBar-playBtn:hover {
+    transform: scale(1.05, 1.05);
+    transition-duration: 0.1s;
+}
+#toolBar-playBtn .fa-circle-pause{
+    display: none;
+}
+#toolBar-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    height: 1px;
+    border-radius: 5px;
+    margin:12px auto;
+    color: white;
+}
+#currentTime, #duration {
+    width: 50px;
+    margin: 0 5px;
+    text-align: center;
+}
+#progressBar {
+    flex:1;
+    height: 20px;
+    padding: 6px 0;
+    cursor: pointer;
+}
+#progressBarInner {
+    flex:1;
+    position: relative;
+    top:2px;
+    height: 7px;
+    border-radius: 5px;
+    background-color: #7e7e7e;
+}
+#timeLine-progress {
+    width: 0;
+    height: 100%;
+    border-radius: 5px;
+    background: white;
+}
+#timeLine-thumb {
+    display:none;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: white;
+    left: -10px;
+    top: -4px;
+    transform: translateX(50%);
+    cursor: pointer;
+}
+#toolBar-right {
+    display:flex;
+    justify-content: end;
+    align-items: center;
+    grid-column: 3/4;
+    width: 470px;
+    padding: 20px 20px 30px 20px;
+}
+#toolBar-right button {
+    margin-left: 20px;
+    background-color: #000000;
+    color:#adadad;
+    font-size: 20px;
+    line-height: 10px;
+}
+#toolBar-right button:hover {
+    transform: scale(1.02, 1.02);
+}
+#volumeDivOutter {
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    padding-top: 12px;
+    background-color: transparent;
+    cursor: pointer;
+}
+#volumeDivInner {
+    position:relative;
+    width: 100px;
+    height: 7px;
+    background-color: #7e7e7e;
+    border-radius: 5px;
+}
+#volumeGauge {
+    width: 0;
+    height: 100%;
+    background-color: white;
+    border-radius: 5px;
+}
+#volumeThumb {
+    display: none;
+    position: absolute;
+    left:0;
+    top:-4px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+}
+#playListBox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 400px;
+    height: 700px;
+    background-color: gray;
+}
+
+
+

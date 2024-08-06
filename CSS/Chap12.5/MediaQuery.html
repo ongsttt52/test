@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+          background: url(/Media/Images/Tree_Slow.jpg) no-repeat fixed;  /* 기본 배경 이미지 지정 */
+          background-size: cover;
+        }
+        @media screen and (max-width:1024px) {
+          body {
+            background: url(/Media/Images/TS2.jpg) no-repeat fixed;  /* 가로가 1024px 이하면 bg1.jpg 지정 */
+            background-size: cover;
+          }
+        }
+        @media screen and (max-width:768px) {
+          body {
+            background: url(/Media/Images/Ts3.jpeg) no-repeat fixed;  /* 가로가 768px 이하면 bg2.jpg 지정 */
+            background-size:cover;
+          }
+        }
+        @media screen and (max-width:500px) {
+          body {
+            background: url(/Media/Images/Ts4.png) no-repeat fixed;  /* 가로가 320px 이하면 bg3.jpg 지정 */
+            background-size: cover; 
+          }
+        }
+        div{
+                border: 10px solid yellow;
+                font-size: 60px;
+                color:yellow;
+            }
+        @media screen and (max-width: 800px) { /* 가로가 800이하이면 투명하게 처리 */
+            div{
+                opacity: 0;    
+                display:none;
+            }
+        }
+      </style>
+</head>
+<body>
+    <div>
+        반응형웹
+    </div>
+</body>
+</html>

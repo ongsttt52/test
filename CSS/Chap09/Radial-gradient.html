@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: 300px;
+            margin: 10px;
+            
+            width:500px;
+			height:300px;
+			border:1px solid #222;
+			border-radius:10px;
+            margin-bottom:30px;
+        }
+        .grad1{
+            /*노란색에서 흰색을 거쳐 주황색으로 바뀌는 타원형 그라데이션*/
+            background:radial-gradient(yellow,white,orange)
+        }
+        .grad2{
+            /*노란색에서 10%위치의 흰색, 60%위치의 주황색으로 바뀌는 타원형 그라데이션*/
+            background: radial-gradient(yellow,white 10%, orange 60%);
+        }
+        .grad3 { 
+			background: repeating-linear-gradient(yellow, yellow 20px, red 20px, red 40px); 
+		}
+		.grad4 {
+			background: repeating-radial-gradient(circle,white, white 10%, #ccc 10%, #ccc 20%); 
+		}
+    </style>
+</head>
+<body>
+    <div class="grad1"></div>
+    <div class="grad2"></div>
+    <div class="grad3"></div>
+    <div class="grad4"></div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="LoginForm" name="loginFrm" action="LoginProcess.jsp" method="post" onsubmit="return frmcheck(this)">
+
+        <input type="text" name="id">
+        <input type="password" name="pwd">
+
+
+        <input type="submit" value="로그인">
+        <input type="buttom" onclick="frmcheck()" value="로그인">
+    </form>
+
+
+    <script>
+        // 1. input submit일 경우
+        // input이 submit을 해주므로 form에서 onsubmit 이벤트가 발생 -> 폼체크 후 return true로 action 가능
+        function frmcheck(frm) {
+            let id = frm.id;
+            let pwd = frm.pwd;
+
+            if(id.value == "") {
+                document.querySelector('#idMsg').innerText = "아이디를 입력하세요"
+                return false;
+            }
+            else if(pwd.value == "") {
+                document.querySelector("#pwdMsg").innerText="비밀번호 입력하세요"
+                document.querySelector('idMsg').innerText="";
+                return false;
+            }
+        }
+        // 2. input button일 경우
+        // input button의 onclick에서 이벤트가 발생했으므로 form정보를 this로 받아올 수 없음 -> documet.LoginFrm으로 폼 name에 접근하여 해결
+        // submit이 일어나지 않았으므로 frm.submit()으로 강제 submit 이벤트 발생
+        function frmcheck() {
+            let frm = document.LoginFrm;
+            let id=frm.id;
+            let pwd = frm.pwd;
+            if(id.value == "") {
+                document.querySelector('#idMsg').innerText = "아이디를 입력하세요"
+                return false;
+            }
+            else if(pwd.value == "") {
+                document.querySelector("#pwdMsg").innerText="비밀번호 입력하세요"
+                document.querySelector('idMsg').innerText="";
+                return false;
+            }
+            else {
+                frm.submit();
+            }
+        }
+    </script>
+</body>
+</html>

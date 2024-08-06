@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--폰트-->
+    <link rel="stylesheet" href="00_fonts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b9007bff14.js" crossorigin="anonymous"></script>
+    <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border-collapse: collapse;  
+            font-family: "Noto Sans KR", sans-serif;
+            color: white;
+        }
+        html, body {
+            position:relative;
+            width: 100%;
+            height: 100%;
+            background: #121212;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        ul {
+            list-style: none;
+        }
+        button, input {
+            border: none;
+            background-color: transparent;
+        }
+        button {
+            cursor:pointer;
+        }
+        hr {
+            border:0;
+            background-color: white;
+            height: 1px;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+        main>header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 70px;
+            margin-top: 20px
+        }
+        main>section {
+            height: 1200px;
+        }
+        section>div {
+            width: 450px;
+            height: 100%;
+            padding: 0 40px;
+        }
+        section>div>header {
+            width: 400px;
+            font-size: 32px;
+            text-align: center;
+        }
+        section h1 {
+            padding-right: 30px;
+        }
+        section>div>form {
+            margin-top: 40px;
+        }
+        form #email, #pwd{
+            width: 100%;
+            height: 50px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #7e7e7e;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        #pwd-btn {
+            position:relative;
+            left: 250px;
+            top:58px;
+        }
+        #pwd-btn img {
+            width: 35px;
+        }
+        #pwdCheckUl {
+            width: 350px;
+            margin:0 auto;
+            margin-bottom: 15px;
+            height: 50px;
+            text-align: left;
+        }
+        #pwdCheckUl li {
+            display: inline-block;
+            position:relative;
+            width: 45%;
+            height: 25px;
+            color: white;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        #pwdCheckUl li img {
+            border-radius: 50%;
+            width: 18px;
+            margin: 0 10px 5px 0;
+            vertical-align: middle;
+            transition-duration: 1s;
+        }
+        #pwdCheckUl button {
+            position:absolute;
+            left: 0;
+            top: 1px;
+            width: 17px;
+            height: 17px;
+            background-color: #121212;
+            border:1px solid #7e7e7e;
+            border-radius: 50%;
+            cursor: default;
+        }  
+        form fieldset {
+            width: 100%;
+            border:none;
+        }
+        fieldset legend {
+            margin: 5px 0;
+        }
+        fieldset input[type="text"] {
+            width: 100%;
+            height: 50px;
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #7e7e7e;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        fieldset div {
+            display:flex;
+            justify-content: center;
+            margin: 5px 0;
+            border: 1px solid #7e7e7e;
+            border-radius: 5px;
+        }
+        fieldset input[type="radio"] {
+            display:none;
+        }
+        .signup-btn-gender {
+            width: 34.3%;
+            height: 30px;
+        }
+        .signup-btn-gender:nth-of-type(1) {
+            border-right: 1px solid #7e7e7e;
+            background-color: #ffde7a;
+            color: black;
+            font-weight: 600;
+        }
+        .signup-btn-gender:nth-of-type(3) {
+            border-left: 1px solid #7e7e7e;
+        }
+        .signup-btn-gender:hover {
+            background-color: #ffde7a;
+            color: black;
+            font-weight: 600;
+        }
+        form input[type="submit"] {
+            width: 100%;
+            height: 55px;
+            margin-top: 20px;
+            border-radius: 50px;
+            background-color: #ffde7a;
+            color: black;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        input[value="다음"]:hover {
+            transform: scale(1.03, 1.06);
+            transition-duration: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <a href="A_main-before.html"><img src="/Media/Images/Project/Icon/gori-gold.png" width="120px"></a>
+        </header>
+        <section>
+            <div>
+                <!--회원가입 폼을 정규식과 keybord 이벤트를 이용해 실시간 formCheck 기능을 만듦, onSubmit시 최종 formCheck 후 약관동의 페이지로 이동함-->
+                <header><h1>가입하고 원하는<br>음악을 감상하세요</h1></header>
+                <form id="regForm" name="regForm" action="C02_signup-terms.html" onsubmit="return formCheckOnSubmit()">
+                    <label class="label">이메일 주소<input type="text" id="email" name="email" placeholder="name@domain.com" autofocus onkeyup="formCheck(name, value)"></label>
+                    <!--
+                    oninput으로 formCheck()를 처리하니 맨 처음 글자를 입력한 상태에서 입력창을 벗어나지 않고 submit 하였을때 그냥 넘어가지는 문제 발생,
+                    onkeyup로 바꾸어 키보드를 눌렀다 뗐을때 유효성이 검사되도록 변경
+                    -->
+                    <label class="label">비밀번호
+                        <button type="button" id="pwd-btn" onclick="pwdFunc()"><img src="/Media/Images/Project/Icon/eye-closed.png" id="pwd-btn-img"></button>
+                        <input type="password" id="pwd" name="pwd" maxlength="25" placeholder="10~25자리의 문자+숫자+특수문자" onkeyup="formCheck(name, value)"></label>
+                    <ul id="pwdCheckUl">
+                        <li><img src="/Media/Images/Project/Icon/checkmark.png"><button type="button"></button>숫자</li>
+                        <li><img src="/Media/Images/Project/Icon/checkmark.png"><button type="button"></button>소문자</li>
+                        <li><img src="/Media/Images/Project/Icon/checkmark.png"><button type="button"></button>대문자</li>
+                        <li><img src="/Media/Images/Project/Icon/checkmark.png"><button type="button"></button>특수문자(!@#$)</li>
+                    </ul>
+                    <fieldset>
+                        <legend>개인정보</legend>
+                        <input type="text" id="name" name="name" placeholder="이름">
+                        <label class="label"><input type="text" id="birth" name="birth" placeholder="생년월일 8자리를 숫자로 입력해주세요" maxlength="8" onkeyup="formCheck(name, value)"></label>
+                        <div>
+                            <button class="signup-btn-gender" type="button" onclick="checkRadio('male')">남자<input type="radio" class="gender" name="gender" value="male" checked></button>
+                            <button class="signup-btn-gender" type="button" onclick="checkRadio('female')">여자<input type="radio" class="gender" name="gender" value="female"></button>
+                            <button class="signup-btn-gender" type="button" onclick="checkRadio('etc')">그 외<input type="radio" class="gender" name="gender" value="etc"></button>
+                        </div>
+                    </fieldset>
+                    <input type="submit" value="다음" >
+                </form>
+            </div>
+        </section>
+        <footer>
+            <div></div>
+        </footer>
+    </main>
+    <script src="C01_signup-input.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>

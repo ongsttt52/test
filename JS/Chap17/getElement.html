@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <button id="bttn">현재 시간 보기</button>
+    </div>
+    <h1>웹 개발 공부</h1>
+    <ul>
+        <li class="col">css</li>
+        <li class="col">html</li>
+        <li class="col">js</li>
+    </ul>
+    <script>
+        document.getElementById("bttn").style.color="red";
+        //"bttn" id를 가진 DOM 요소에 접근하여 스타일을 적용
+
+        let tgs = document.getElementsByClassName('col');
+        // 전체문서(document)에서 클래스 이름이 col인 DOM에 접근하여 속성들을 배열과 비슷한 구조에 저장함 (tgs 변수에 저장)
+        for(let t=0; t<tgs.length; t++) {
+            tgs[t].style.color="red";
+            // tgs의 모든 요소에 스타일을 적용
+        }
+    </script>
+</body>
+</html>

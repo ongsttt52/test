@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,td{
+            border:1px solid black;
+            border-collapse: collapse;
+        }
+        tr, td {
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="createTable">
+        <input type="text" id="tableRow" >행
+        <input type="text" id="tableCol" >열
+        <input type="button" onclick="inner()" value="작성">
+    </form>
+    <table id="table1">
+
+    </table>
+
+    <script>
+        var table = document.getElementById('table1');
+        var rows = document.getElementById('tableRow');
+        var cols = document.getElementById('tableCol');
+        function createTr() {
+            console.log(rows.value);
+            for(let i=0; i<rows.value; i++) {
+                let row = document.createElement("tr");
+                table.appendChild(row);
+                for(let i2=0; i2<cols.value; i2++) {
+                    var string = i + ", " + i2;
+                    let col = document.createElement("td");
+                    let text = document.createTextNode(string);
+                    col.appendChild(text);
+                    row.appendChild(col);
+                }
+            }
+        }
+        function inner() {
+            var str=""; 
+            for(let j1=0; j1<rows.value; j1++) {
+                str += "<tr>";
+                    for(let j2=0; j2<cols.value; j2++) {
+                        str += "<td>" + j1 + ", " + j2 + "</td>";
+                    }
+                str += "</tr>";
+            }
+            console.log(str);
+            document.getElementById('table1').innerHTML=str;
+        }
+
+    </script>
+</body>
+</html>

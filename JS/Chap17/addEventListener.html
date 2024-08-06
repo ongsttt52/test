@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <img src="/Media/Images/Tree_Slow.jpg" id="cover">
+    </div>
+
+    <script>
+        let cover = document.getElementById("cover");
+        cover.addEventListener("mouseover",changePic);
+        cover.addEventListener("mouseout",originPic);
+        // mouseover : 요소쪽으로 커서를 이동할때  /  mouseout : 요소에서 커서가 떠날때
+        // 이미지의 픽셀에 마우스가 겹치거나 벗어날때 일어남
+
+        function changePic() {
+            cover.src="/Media/Images/TS2.jpg";
+        }
+        function originPic() {
+            cover.src="/Media/Images/Tree_Slow.jpg";
+        }
+
+    </script>
+</body>
+</html>

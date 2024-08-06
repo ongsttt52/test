@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #m2 {
+            text-align: center;
+        }
+        .box {
+            border-bottom: 2px solid #ccc;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+        .circle0,
+        .circle1,
+        .circle2 {
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            border: 4px solid #ff6600;
+            line-height: 200px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="m1">
+        <div>jQuery</div>
+    </div>
+    <div id="m2">
+        <div class="a">html</div> <!--class="circle0 추가"-->
+        <div>css</div> <!--circle1 추가-->
+        <div>javascript</div> <!--circle2 추가-->
+    </div>
+    <script>
+        //자바스크립트로 클래스 추가하기
+        let m2Div = document.querySelectorAll("#m2 div");
+        console.log(m2Div[0].classList);
+        for(let i=0; i<m2Div.length; i++) {
+            m2Div[i].classList.add("circle"+i)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="col">
+        querySelector
+    </div>
+    <br>
+    <div class="col2">
+        querySelectorAll
+    </div>
+    <br>
+    <div class="col3">
+        getElement
+    </div>
+    <script>
+        let col = document.querySelector('.col').style.color="red";
+        let col2 = document.querySelectorAll('.col2')[0].style.color="blue";
+        let col3 = document.getElementsByClassName("col3")[0].style.color="yellow";
+        //qS와 getElement의 차이점 : qS는 . # 태그 모두 올 수 있기 때문에 구분자를 써줘야함
+        // getElement와 qSAll은 DOM의 정보가 NodeList에 저장되기 때문에 인덱스값으로 구분해줘야함
+    </script>
+</body>
+</html>

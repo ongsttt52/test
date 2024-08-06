@@ -1,0 +1,21 @@
+div {
+    width:200px;
+    height: 100px;
+    display:inline-block;
+    border:1px solid #222;
+}
+#margin1 {
+    margin:50px;
+}
+#margin2 {
+    margin:20px 50px;
+}
+#margin3 {
+    margin:30px 20px 50px;
+}
+#margin4 {
+    margin:30px 50px 30px 50px;
+}
+#margin5 {
+    margin-right:20px;
+}

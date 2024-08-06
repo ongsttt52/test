@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+</head>
+<body>
+    <script>
+        // each() -> 배열관련 함수
+        $(document).ready(function() {
+            var city = ["서울", "대구", "대전", "부산"]; // "서울" -> value
+            $.each(city, function(index, value) { // each(객체, 콜백함수(인덱스,밸류)) 의 형태로 사용, 모든 객체에 콜백함수를 적용시킴
+                console.log(index + ": " + value);
+            });
+            var subjectInfo = {
+                subject: "html", // key: value
+                grade: 1,
+                days: 20
+            };
+            $.each(subjectInfo, function(key, value) { // 콜백함수(key,밸류) -> 객체의 key값 (subjec, grade, days)과 value ("html", 1, 20)를 매개변수로 하여 subjectInfo에 함수 적용
+                console.log(key + ": " + value);
+            });
+        });
+
+
+        // $(selector).each()
+        $(document).ready(function() {
+            $("div").each(function(index, element) {
+                console.log(index); // div 요소의 index값, 0(첫번째 요소) 부터 시작
+                console.log(element); // div 요소 자신
+                console.log($(this).attr("class")); // div 요소 각각의 class 속성값을 취득
+            });
+        });
+    </script>
+    <div class="m1">내용1</div>
+    <div class="m2">내용2</div>
+    <div class="m3">내용3</div>
+
+    <script>
+        // map() -> 배열관련 함수
+        $(document).ready(function() {
+            var city = ["서울", "대구", "대전", "부산"];
+            var newCity = $.map(city, function(value, index) {
+                if(index < 2) {
+                    return value; // map은 함수 안의 return을 실행시켜 기존의 배열을 이용해 새로운 배열 생성 가능
+                                // each() 메서드는 return을 사용할 수 없다
+                }
+            });
+            console.log(newCity.toString());
+        });
+    </script>
+</body>
+</html>

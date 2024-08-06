@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'EF_jejudoldam';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+div{
+    width: 740px;
+    height: 555px;
+    position:relative
+}
+#text{
+    position:absolute;
+    width: 50%;
+    height: 200px;
+    color:yellow;
+    font-family: EF_jejudoldam;
+    font-size:80px;
+    text-align: center;
+    top:0px;
+}
+#bg{
+    background-color: black;
+    opacity: 0.5;
+    position:absolute;
+    width: 50%;
+    height: 100px;
+    top:20%;
+    left:25%;
+
+}
+

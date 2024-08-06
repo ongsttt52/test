@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 960px;
+            margin: 0 auto;
+        }
+        .contents {
+            margin: 30px auto;
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #222;
+            border-radius: 5px;
+        }
+        .contents :nth-child(3) {
+            background-color: #ffff00;
+        }
+        /*모든 타입중 3번째 타입에 요소 적용*/
+        /*contents :의 띄어쓰기는 contents의 모든 자식들중에 라는 뜻이다*/
+        .contents p:nth-of-type(3) {
+            background-color: #00b900;
+        }
+        /*p 타입중 3번째 p에 요소 적용*/
+    </style>
+</head>
+<body>
+    <div class="contents">
+        <h2>호텔 소개</h2>
+        <p>호텔 신라는 수많은 국빈 방문과 국제행사를 치러내며 '삼성 그룹을 대표하는 얼굴'이자 '한국을 대표하는 호텔'로서 
+        자부심과 책임을 가지고 우리나라 서비스 산업을 선도하고 있습니다.
+        </p>
+        <h2>객실 소개</h2>
+        <p>카리스의 로얄 스위트룸은 VIP전용 객실로서 우아한 인테리어와 은은한 원목가구풍의 색으로 일관성있고 
+        고급스러운 실내분위기를 자랑하며 또한 침실과 응접실이 분리가 되어 있어서 손님 초대 및 소규모 회의에도 손색이 없는 객실입니다.
+        </p>
+        <h2>예약 방법 및 요금</h2>
+        <p>문의해 주시면 친절한 안내를 받으실 수 있습니다.<br>
+            상담시간 : 오전 09:30 ~ 오후 20:00 <br>전화문의 : 032-554-6400 / 팩스 : 032-554-6402<br>
+            방문상담 : 오시기전 미리 예약전화를 주시면 상담 스케쥴을 조정해 드립니다. 
+        </p>
+    </div>
+</body>
+</html>

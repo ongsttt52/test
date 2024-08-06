@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <img src="/Media/Images/Tree_Slow.jpg" id="chun">
+    </div>
+
+    <script>
+        var chun = document.querySelector("#chun"); // id=chun인 요소를 가져옴
+        chun.onclick  = function(event) {
+            alert("이벤트 유형: " + event.type + ", 이벤트 발생 위치 : " + event.pageX + "," + event.pageY);
+        }
+
+        chun.onclick = function(event) {
+            alert("클릭한 이미지 파일 : " + this.src);
+        }
+        // 이벤트가 일어난 대상을 this로 지정할 수 있음
+    </script>
+</body>
+</html>

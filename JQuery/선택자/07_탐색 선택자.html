@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <!--탐색 선택자-->
+    <div id="m1">
+        <a href="#">내용1_1</a>
+        <span>내용1_2</span>
+    </div>
+    <div id="m2">
+        <div>
+            <a href="#">내용2_1</a><span>내용2_2</span>
+        </div>
+    </div>
+    <div id="m3">
+        <div><span>내용3_1</span></div>
+    </div>
+    <div id="m4">
+        <span class="m">내용4_1</span><span>내용4_2</span><span>내용4_3</span><em>내용4_4</em>
+    </div>
+    <div id="m5">
+        <span class="m">내용5_1</span><span>내용5_2</span><span>내용5_3</span>
+    </div>
+    <div id="m6">
+        <div><span>내용6_1</span></div>
+        <div>내용6_2</div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#m1").children().css("border", "2px solid red"); // #m1의 자식요소
+            $("#m2").children("span").css("border", "2px solid orange"); // #m2의 자식중 span인 요소
+            $("#m3 span").closet("div".css("border", "2px solid yellow")); // m3 span요소의 부모가 되는 첫번째 div요소 선택
+            $("#m4 > span.m").nextUntil("em").css("border", "2px solid green"); // m4>span.m 요소의 다음 요소부터 em 요소의 이전 요소까지 선택
+            $("#m5 > span").filter(".m").css("border", "2px solid blue"); // m5의 자식 span중 클래스가 m인 요소 선택
+            $("#m6 > div").has("span").css("border", "2px solid navy"); // span 요소를 포함한 m6의 자식 div 선택
+        })
+    </script>
+
+    <!--콘텐츠 필터 선택자-->
+    <div id="m1">
+        <div>내용1_1</div>
+        <p>내용1_2</p>
+    </div>
+    <div id="m2">
+        <p>내용2</p>
+    </div>
+    <div id="m3">
+        <span>내용3_1</span ><em>내용3_2</em>
+    </div>
+    <div id="m4">
+        <p>내용4</p>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#m1 > div").add("#m1 > p").css("border", "2px solid red");
+            $("#m2").children("p").addBack().css("border", "2px solid orange"); // p요소와 이전 선택요소 #m2 선택
+            $("#m3").find("span").css("border", "2px solid yellow").end().find("em").css("border", "2px solid yellow"); 
+            if ($("#m4").children().is("p")) {
+                console.log("p 요소가 존재합니다.")
+            }
+
+        })
+    </script>
+</body>
+</html>

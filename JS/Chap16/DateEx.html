@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,html {
+            width: 100%;
+            height: 100%;
+        }
+        #container{
+            width: 500px;
+            height: 500px;
+            border:1px solid black;
+            background-color: skyblue;
+            margin:100px auto;
+            text-align: center;
+            border-radius: 50%;
+        }
+        span{
+            color:red;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        h1{
+            margin-top : 30%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>책 읽기</h1>
+        <p><span class="accent" id="result"></span>일 연속으로 <br> 책 읽기를 달성했군요.</p>
+        <p>축하합니다!</p>
+    </div>
+    <script>
+        var now = new Date(); // 오늘 날짜를 객체로 지정
+        console.log(now);
+        var fistDay = new Date("2024-06-18"); // 시작 날짜를 객체로 지정
+
+        var toNow = now.getTime();
+        var toFirst = fistDay.getTime();
+        var passedTime = toNow - toFirst;
+
+        passedTime = Math.round(passedTime / (1000*60*60*24)); // 밀리 초를 일 수로 계산하고 반올림
+        document.querySelector('#result').innerText = passedTime;
+    </script>
+</body>
+</html>

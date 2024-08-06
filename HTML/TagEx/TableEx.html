@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        table, th, td {
+          border:1px solid #3128a8;
+          border-collapse: collapse;
+        }
+        th, td { padding:10px 20px; }
+        br {
+            border:1px solid black;
+            
+        }
+      </style> <!--Table 만드는 style-->
+</head>
+<body>
+    <table> <!--표 만들기-->
+        <caption>선물용과 가정용 상품 구성</caption>
+        <colspan>
+            <!--첫번째 열의 배경색 지정-->
+            <col style = "backgroung-color : #e42222;">
+            <col>
+            <col span="2"> 
+        </colspan>
+
+        <tr>
+            <!--표의 제목 행 셀을 만들 때 사용-->
+            <th>용도</th>
+            <th>중량</th>
+            <th>개수</th>
+            <th>가격</th>
+        </tr>
+        <tr><!--tr : 행 생성-->
+            <td rowspan="2">선물용</td>
+            <td>3kg</td> <!--행 안의 내용-->
+            <td>11~16과</td>
+            <td>35,000원</td>
+        </tr>
+        <tr>
+            <td>선물용</td>
+            <td>5kg</td>
+            <td>18-26과</td>
+            <td>52,000원</td>
+        </tr>
+        <tr>
+            <td rowspan="2">가정용</td>
+            <td>3kg</td>
+            <td>11-16과</td>
+            <td>30,000원</td>
+            <td>하나 더</td> <!--칸이 하나 더 생김-->
+        </tr>
+        <tr>
+            <td>가정용</td>
+            <td>5kg</td>
+            <td>18-26과</td>
+            <td>47,000원</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <nav>dd</nav>
+</body>
+</html>

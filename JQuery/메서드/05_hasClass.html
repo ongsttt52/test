@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div id="box" class="m"></div>
+    <script>
+        if($("#box").hasClass("m")) {
+            console.log("클래스 있음");
+        }
+        else {
+            console.log("클래스 없음");
+        }
+
+        $("#box").toggleClass("m");
+        if($("#box").hasClass("m")) {
+            console.log("클래스 있음");
+        }
+        else {
+            console.log("클래스 없음");
+        }
+    </script>
+</body>
+</html>

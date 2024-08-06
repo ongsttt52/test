@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <script>
+
+
+        // text() -> innerText와 유사
+        $(document).ready(function() {
+            console.log($("#m1").text()); // m1의 텍스트를 얻음 (자바의 getter)
+            $("#m1").text("responsive web"); // text(message) -> m1의 텍스트를 message로 설정함 (setter)
+            $("#m2 > div").text(function(index,text) {
+                return "div 요소의 텍스트는" + text + ", index는 " + index; // 매개변수 text는 기존 div가 가지고 있던 text 내용을 뜻함
+            });
+        });
+
+        </script>
+        <div id="m1">jQuery</div>
+        <div id="m2">
+            <div>html</div>
+            <div>css</div>
+            <div>javascript</div>
+        </div>
+
+        <script>
+            // html() -> innerHTML과 유사
+            $(document).ready(function() {
+                console.log($("#m1").html());
+                $("#m1").html("<em>html</em>"); // #m1의 html을 <em>html</em>로 바꿈
+                $("m2 > div").html(function() { // m2 div의 html이 em에서 strong으로 바뀜
+                    return "<strong>" + $(this).text() + "</strong>";  // this.text -> 선택된 div의 text
+                });
+            });
+        </script>
+
+        <div id="m1"><strong>jQuery</strong></div>
+        <div id="m2">
+        <div><em>html</em></div>
+        <div><em>css</em></div>
+        <div><em>javascript</em></div>
+    </div>
+</body>
+</html>

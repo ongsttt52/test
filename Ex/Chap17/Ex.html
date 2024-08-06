@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Web Programming</title>
+	<style>
+        *{
+            box-sizing:border-box;
+        }
+        #container {  
+            width:500px;
+            margin:20px auto;
+            padding:20px;
+        }
+        input[type="text"] {
+            width:370px;
+            float:left;
+            height:30px;
+            padding-left:30px;
+        }
+        button {
+            width:90px;
+            height:30px;
+            float:right;
+            background:#222;
+            color:#fff;
+            border:none;
+        }
+        hr { clear:both; display:none; }
+        ul { list-style:none; padding-top:50px;}
+        li { line-height: 2.5; }
+        li:hover { cursor:pointer;}
+    </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Web Programming</h1>
+    <p>공부할 주제를 기록해 보세요</p>
+    <form action="">
+      <input type="text" id="subject" autofocus>
+      <button onclick="newRegister(this); return false;">추가</button>
+      <!--button의 기본 속성은 submit이기 때문에 return false가 submit의 역할을 취소하도록 만듦-->
+    </form>
+    <hr>  
+    <ul id="itemList"></ul>  
+  </div>
+
+  <script>
+    function newRegister(btn) {
+     // 요소 노드 추가
+     let newItem = document.createElement("li");
+     // 폼의 텍스트 필드
+     let subject = document.querySelector("#subject");
+     // 텍스트 필드의 값을 텍스트 노드로 만들기
+     let newText = document.createTextNode(subject.value);
+     // 텍스트 노드의 요소 노드를 자식 노드로 추가
+     newItem.appendChild(newText);
+     // 웹 문서에서 부모 노드 가져오기
+     let itemList = document.querySelector("#itemList");
+     // 새로 만든 요소 노드를 부모 노드에 추가
+     itemList.appendChild(newItem);
+     subject.value="";
+     console.log(btn); // 요소 내에서 직접 이벤트를 연결하는 경우 그냥 this를 쓰면 
+    
+
+    // 입력한 항목 클릭하여 삭제하기
+    // li의 항목을 삭제하기 위해서는 li 부모 노드를 찾아서 삭제
+    let items = document.querySelectorAll("li") // 모든 li 항목 가져오기
+    for(let i=0; i<items.length; i++) {
+      items[i].addEventListener("click",function() { // 항목 클릭했을 때 실행할 함수
+        if(this.parentNode) // 부모 노드가 있다면
+          this.parentNode.removeChild(this);
+      });
+    } // this -> 현재 이벤트가 일어나고 있는 대상
+  }
+  </script>
+</body>
+</html>

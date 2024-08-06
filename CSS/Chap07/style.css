@@ -1,0 +1,19 @@
+h2{
+    color:blue;
+}
+.accent {
+    color:green;
+}
+table, th, td{
+    border:1px solid #222;
+    border-collapse: collapse;
+}
+th, td {
+    padding:10px;
+}
+.center {
+    text-align: center;
+}
+.justify { /*양쪽 정렬*/
+    text-align: justify;
+}

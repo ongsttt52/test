@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-size: 12px;
+        }
+        textarea {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+        textarea.on{
+            background: #ff6600;
+            color: #fff;
+        }
+        #display {
+            width: 300px;
+            height: 100px;
+            word-break: break-all;
+            border: 1px solid #000;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            $("textarea").keydown(function() {
+                $(this).addClass("on");
+            }).keyup(function() {
+                $("#display").text($(this).val()); // textarea에 입력한 값을 #display의 text값으로 변경
+                $(this).removeClass("on"); // 키를 떼면 class를 제거
+            }); 
+        });
+    </script>
+</body>
+    <textarea></textarea>
+    <div id="display"></div>
+</html>

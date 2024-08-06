@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding-top:20px;
+            text-align: center;
+        }
+        .accent{
+            font-weight: bold;
+            font-size: 30px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 두 수를 더하는 익명함수를 변수 sum에 할당
+        let sum = function(a,b) {
+            return a+b;
+        }
+        document.write("함수 실행 결과 : " + sum(10,20) + "<br>")
+
+        // 선언과 동시에 실행하기
+        (function() {
+            var username = prompt("이름을 입력하세요.");
+            document.write("안녕하세요? <span class='accent'>"+ username + "</span>님!<br>");
+        }());
+        // 매개변수가 있는 즉시실행함수
+        (function(a1,b1) {
+            sum1=a1+b1;
+        }(100,200));
+        document.write("함수 실행 결과 : " + sum1);
+    </script>
+</body>
+</html>

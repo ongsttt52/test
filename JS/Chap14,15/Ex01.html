@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var num1 = Number(prompt("num1을 입력하세요"));
+        var num2 = parseInt(prompt("num2을 입력하세요"));
+        function sumMult() {
+            let result=0;
+            (num1==num2) ? result=num1*num2 : result=num1+num2;
+            return result;
+        }
+        console.log(sumMult());
+
+        function compare(num1, num2) {
+            if(num1>num2) alert("더 큰 숫자 : " + num1);
+            else if(num1<num2) alert("더 큰 숫자 : " + num2);
+            else alert("두 수가 같습니다.")
+        }
+        compare(num1,num2);
+    </script>
+</body>
+</html>

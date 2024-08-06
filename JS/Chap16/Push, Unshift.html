@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // a.push(b) -> a 배열의 끝에 b 요소 추가 후 길이 반환
+        var nums = [1,2,3];
+        var ret1 = nums.push(4,5);
+        document.write("length : ", ret1, " | 배열 : ", nums, "<br>") ;
+        // a.unshift(b) -> a 배열의 맨 앞에 b 요소 추가 후 길이 반환
+        var ret2 = nums.unshift(0);
+        document.write("length : ", ret2, " | 배열 : ", nums, "<br>") ;
+    </script>
+</body>
+</html>

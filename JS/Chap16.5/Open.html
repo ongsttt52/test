@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>문서를 열면 팝업 창이 표시됩니다</p>
+    <script>
+        // 너비 500px, 높이 400px인 팝업창을 여는 예제
+        window.open("notice.html", "pop", "width=500, height=400, left=100, top=300")
+        // 창 이름(pop)을 설정하지 않으면 새로고침 할때마다 계속 새로운 창이 열림
+
+        // 팝업이 차단되었을때 알림 띄우기
+        let newWin = open("notice.html", "pop", "width=500, height=400, left=100, top200");
+        if(newWin == null) {
+            alert("팝업이 차단되어 있습니다. 해제해주세요")
+        }
+        newWin.moveBy(100,200);
+    </script>
+</body>
+</html>

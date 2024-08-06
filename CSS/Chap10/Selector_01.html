@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #eee;
+        }
+        section{
+            width: 600px;
+            margin:20px auto;
+        }
+        p{
+            width: 500px;
+            padding: 10px;
+            background-color: #fff;
+            border:1px solid #ccc;
+            line-height: 2;
+        }
+        section p{
+            color:blue;
+        }
+        /*section요소의 모든 하위 p요소에 적용 / section을 벗어나면 적용 안됨*/
+        section > p{
+            color:red;
+        }
+        /*section의 바로 아래 자손(자식) 에게만 적용*/
+        h1+p {
+            background-color: yellow;
+        }
+        /*h1의 모든 형제인 요소중 첫번째가 p일 경우에만 적용*/
+        h1~p{
+            background-color: green;
+        }
+        /*h1의 모든 형제인 p요소에게 적용*/
+    </style>
+</head>
+<body>
+    <section>
+        <h1>예약 방법 & 사용 요금</h1>
+        <h2>h2</h2>
+        <p>아직 온라인 신청이 준비되어 있지 않습니다. <br>전화(xxx-xxxx)로 문의 바랍니다.</p>
+        <p>h1~p</p>
+        <div>
+            <p>가족실(2~4인) : 60,000원/일</p>
+            <p>도미토리(4인 공용) : 25,000/일</p>
+        </div>
+    </section>
+</body>
+</html>

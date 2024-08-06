@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        #vis {
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <div id="vis">내용1</div>
+    <div>내용2</div>
+    <script>
+        $(document).ready(function() {
+            console.log($("div:hidden").text()); // -> 내용 1 출력
+            $("div:visible").css("background", "orange");
+            // visible -> 보이는 요소 선택, hidden -> 안보이는 요소 선택
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <header id="header">
+        <div class="logo">로고</div>
+        <div class="util">회원가입</div>
+        <nav id="gnb">
+            <ul>
+                <li>메뉴1
+                    <ul>
+                        <li>메뉴1_1</li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="visual">
+            <p>비주얼</p>
+        </div>
+        <div id="content">
+            <div class="left">왼쪽</div>
+            <div class="right">
+                <div class="util">오른쪽</div>
+            </div>
+        </div>
+        <div id="banner">배너</div>
+        <footer id="footer">푸터</footer>
+    </header>
+    <script>
+        window.onload = function() { // onload = 문서가 전부 로드되면 이 함수를 실행함 -> html의 위에 위치해도 잘 실행됨
+            $(document).ready(function() {
+                console.log("제이쿼리 시작");
+            });
+        }
+
+        /* JQuery 선택자 */
+        $(document).ready(function() {
+            $("p").css("border", "4px solid red");
+            $("#gnb").css("border", "4px solid orange");
+            $(".logo").css("border", "4px solid yellow");
+            $("#gnb > ul > li").css("border", "4px solid green");
+            $("#gnb ul").css("border", "4px solid blue");
+            $("#visual + #content").css("border", "4px solid navy");
+            $("#visual ~ #footer").css("border", "4px solid purple");
+            $("div.utul").css("border", "4px solid pink");
+            $(".left, .right, #banner").css("border", "4px solid gray");
+        })
+    </script>
+</body>
+</html>

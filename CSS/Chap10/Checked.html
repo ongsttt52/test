@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #room_form input:checked+label {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <fieldset id="room_form">  
+        <legend>객실 형태</legend>
+        <ul>
+        <li>
+            <input type="radio" name="room" id="basic" checked>
+            <label for="basic">기본형(최대 2인)</label>
+        </li>      
+        <li>
+            <input type="radio" name="room" id="family">
+            <label for="family">가족형(최대 8인)</label>
+        </li>          
+        </ul>
+    </fieldset>
+</body>
+</html>

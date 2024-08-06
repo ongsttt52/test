@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>스크롤 관련 메서드</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{
+            height: 2000px;
+        }
+        #up{
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;   
+            transition: all 0.5s ease;
+            /* 숫자가 작을 수록 투명 */
+            opacity: 0;
+            /* 보이지 않음, 공간은 차지하고 있음(너비와 높이가 지정된 크기만큼) */
+            visibility: hidden;
+        }
+        #up.on{
+            opacity: 1;    
+            visibility: visible;
+        }
+        #up a{
+            display: block;
+            padding: 20px;
+            text-align: center;            
+            background: #333;
+            text-decoration: none;
+            color: #fff;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var isOn = false;
+            $(window).scroll(function() {
+                if($(this).scrollTop() > 100) { // 스크롤Top 값이 100초과될 때만 top메뉴가 활성화
+                    if(!isOn) {
+                        $("#up").addClass("on");
+                        isOn = true;
+                        // let a = qs("#up"); a.classList += (" on") -> 문자열 " on"을 클래스리스트에 추가하여 클래스를 추가할 수도 있음 (문자열자체를 넣는 것이므로 공백을 한칸 넣어줘야함)
+                    }
+                }
+                else {
+                    if(isOn) {
+                        $("up").removeClass("on");
+                        isOn = false;
+                    }
+                }
+            });
+                $("#up a").click(function() {
+                    $(window).scrollTop(0); // -> 현재 보고있는 창
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div id="wrap"></div>
+    <div id="up"><a href="javascript:;">TOP</a></div> <!--링크이동 대신 자바스크립트 코드를 실행하겠다는 뜻으로 현재는 코드가 없으므로 아무것도 실행되지 않음-->
+</body>
+</html>

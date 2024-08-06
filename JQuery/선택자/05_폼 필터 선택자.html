@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div><input type="text"></div>
+    <div><input type="password"></div>
+    <div><button>확인</button></div>
+    <div><input type="button" value="확인"></input></div>
+    <div><input type="checkbox" id="css" checked="checked"><label for="css">css</label></div>
+    <div>
+        <select>
+            <option>과목선택</option>
+            <option>javascript</option>
+            <option selected="selected">jQuery</option>
+        </select>
+        <textarea cols="20" rows="5" disabled="disabled">javascript</textarea>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("input:text").css("background", "red");
+            $("input:password").css("background", "orange");
+            $(":button").css("background", "yellow"); // button -> button 태그만 선택 / :button -> button 태그와 input type=button도 선택
+            $("input:checked + label").css("background", "green");
+            $("option:seclected").css("background", "blue");
+            $("textarea:disabled").css("background", "pink");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>윈도우 관련 이벤트</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            height: 2000px;
+        }
+        header {
+            height: 100px;
+            border-bottom: 1px solid #999;
+        }
+        header.bg {
+            background: #333;
+        }
+        #quick {
+            width: 100px;
+            height: 400px;
+            background: #ff6600;
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            left: 100%;
+            top: 150px;
+            margin-left: -100px;
+        }
+        #quick.on {
+            position: fixed;
+            top: 50px
+        }
+    </style>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            if ($(this).width() < 960) { // $(this) : document -> 현재 보고있는 문서 (창)
+                $("header").addClass("bg");
+            } else {
+                $("header").removeClass("bg");
+            }
+            $(window).scroll(function() { // 스크롤바를 움직일때
+                if($(this).scrollTop() > $("header").height()) { 
+                    $("#quick").addClass("on"); 
+                } else {
+                    $("#quick").removeClass("on");
+                }
+            }).resize(function() {// 화면 창의 크기 변화가 있을 때
+                if($(this).width() < 960) { // 현재 창의너비가 960보다 작다면
+                    $("header").addClass("bg");
+                } else {
+                    $("header").removeClass("bg"); 
+                } 
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap" class="bg">
+        <header class="bg"></header>
+    </div>
+    <div id="quick">QUICK</div>
+</body>
+</html>

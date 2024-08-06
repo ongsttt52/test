@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src = "/Media/Images/Tree_Slow.jpg" id="ts">
+    <script>
+        let toggle=true;
+        let chun = document.querySelector("#ts");
+        chun.onclick=toggleImg;
+        function changeImg(){
+            ts.src="/Media/Images/TS2.jpg"
+            toggle=false;
+        }
+        function changeImg2(){
+            ts.src="/Media/Images/Tree_Slow.jpg"
+            toggle=true;
+        }
+        function toggleImg() {
+            if(toggle) {
+                chun.onclick=changeImg;
+            }
+            else {
+                chun.onclick=changeImg2;
+            }
+        }
+       setInterval(toggleImg,10);
+    </script>
+</body>
+</html>

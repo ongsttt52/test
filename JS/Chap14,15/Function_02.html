@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //외부에서 값을 받아줄 변수 -> 매개변수
+        // num1, num2
+        function addNum(num1, num2) {
+            let sum = num1 + num2;
+            return sum;
+        } 
+        //함수를 호출할 때 실제 값 부분 -> 인수
+        let result = addNum(2,3) // 2,3 -> 인수
+
+        document.write("두 수를 더한 값 : " + result + "<br>");
+
+        function multiply(a,b = 5, c = 10) {
+            return a*b*c;
+        }
+        var result1 = multiply(5,6,7); // a=5, b=6, c=7
+        document.write("mutiply(5,6,7)을 실행하면 결과는 " + result1 + "입니다. <br>");
+        var result2 = multiply(5,6); // a=5, b=6, c=10(기본값)
+        document.write("mutiply(5,6)을 실행하면 결과는 " + result2 + "입니다. <br>");
+        var result3 = multiply(30); // a=30, b=5, c=10 (b,c 기본값)
+        document.write("mutiply(30)을 실행하면 결과는 " + result3 + "입니다. <br>");
+
+        function calcSum() {
+            let n1 = prompt("수를 입력하시오")
+            let sum=0;
+            for(let i=1; i<=n1; i++) {
+                sum+=i;
+            }
+            return sum;
+        }
+        console.log(calcSum())
+    </script>
+</body>
+</html>

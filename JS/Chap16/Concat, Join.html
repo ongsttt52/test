@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nums = [1,2,3];
+        var chars = ["a", "b", "c", "d"];
+        
+        // a.concat(b) -> a 배열의 끝부분에 b를 합침
+        var numChars = nums.concat(chars);
+        var charNums = chars.concat(nums);
+        document.write("nums에 chars 합치면 : ", numChars ,"<br> chars에 nums 합치면", charNums + "<br>");
+
+        // a.join() -> 배열의 요소를 연결해 하나의 문자열로 만듦
+        var string1 = nums.join();
+        document.write("구분자 없이 : ", string1 + "<br>");
+        var string2 = nums.join("/");
+        document.write("'/'를 구분자로 지정 : ", string2);
+    </script>
+</body>
+</html>

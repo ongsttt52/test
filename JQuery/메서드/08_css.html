@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div:nth-child(1) {
+            background: red;
+        }
+        div:nth-child(2) {
+            background: green;
+        }
+        div:nth-child(3) {
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>내용1</div> <!--div를 script 아래에 배치하면 script를 닫을때 사용한 엔터때문에 nth-child(1)이 div가 아닌 공백이 되어버림-->
+    <div>내용2</div>
+    <div>내용3</div>
+    <script>
+        $(document).ready(function() {
+            $("div").eq(0).css({padding: 10, "text-align" : "center"});
+            $("div").css("width", function(index) {
+                return index * 100 + 100; // 100,200,300
+            });
+        });
+        $(document).ready(function() {
+            let widthResize = function(index) {
+                return index * 100 + 100;
+            };
+            $("div").eq(0).css({padding: 10, "text-align" : "center"});
+            $("div").css("width", widthResize);
+        });
+    </script>
+
+</body>
+</html>

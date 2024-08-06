@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>여러 데이터 나열하기</h1>
+    <form>
+        <!-- 드롭다운 목록 -->
+        <label for="prod1">상품 선택</label>
+        <select id="prod1">
+            <option value="special_3" >선물용 3kg</option>
+            <option value="special_5">선물용 5kg</option>
+            <option value="falmily_3" selected>가정용 3kg</option>
+            <option value="falmily_5">가정용 5kg</option>
+        </select>
+        <label for="prod2">포장 여부</label>
+        <input type="text" id="prod2" list="pack">
+        <datalist id="pack"> <!-- datalist의 id를 이용해 이름을 붙이고 input태그의 list속성에 데이터 목록 id를 지정함 -->
+            <option value="package">선물 포장</option>
+            <option value="no_package">포장 안 함</option>
+        </datalist> <!-- 데이터 목록에 제시한 값중에서 선택하면 그 값이 자동으로 텍스트 필드에 입력됨 -->
+    </form>
+</body>
+</html>

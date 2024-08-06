@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--폰트-->
+    <link rel="stylesheet" href="00_fonts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f87116b39f.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Noto Sans KR", sans-serif;
+            color: white;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #121212;;
+        }
+        header {
+            width: 100%;
+            margin-top: 20px;
+            text-align: center;
+        }
+        header>h1 {
+            font-size: 50px;
+        }
+        header>h3 {
+            color: #ffde7a;
+        }
+        main {
+            width: 100%;
+            height: 100%;
+        }
+        #profileForm {
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            height: 700px;
+            margin: 10px auto;
+            padding: 20px;
+        }
+        #profileForm>div {
+            width: 100%;
+        }
+        #firstDiv {
+            display: flex;
+            align-items: center;
+            height: 80px;
+        }
+        #imagePreview {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-image: url(/Media/Images/Project/Profile/profile_blank.png);
+            background-size: cover; 
+            background-position: center;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+        #imageInput {
+            display: none;
+        }
+        #firstDiv input[type="text"] {
+            height: 30px;
+            margin-left: 5px;
+            padding: 0 5px;
+            background-color: transparent;
+            border: 1px solid #7e7e7e;
+            border-radius: 5px;
+        }
+        fieldset {
+            height: 390px;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 1px solid #7e7e7e;
+            border-radius: 5px;
+        }
+        fieldset>div {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 3px;
+        }
+        #genreDiv label {
+            width: 80px;
+            height: 30px;
+            margin: 5px;
+            border-radius: 5px;
+            background-color: #ffde7a8e;
+            color: black;
+            font-weight: 500;
+            text-align: center;
+            line-height: 27px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .genreCheckBox {
+            display: none;
+        }
+        fieldset #artistDiv {
+            height: 50px;
+            border: 1px solid white;
+        }
+        fieldset #songDiv {
+            height: 50px;
+            border: 1px solid white;
+        }
+        #lastDiv {
+            height: 130px;
+            margin-top: 20px;
+        }
+        #lastDiv textarea {
+            display: inline-block;
+            width: 100%;
+            height: 100px;
+            margin-top: 5px;
+            padding: 10px;
+            background-color: transparent;
+            border: 1px solid #7e7e7e;
+            border-radius: 5px;
+            resize: none;
+        }
+        textarea:focus {
+           outline : none;
+        }
+        
+        #profileForm input[type="submit"] {
+            width: 80%;
+            height: 70px;
+            margin: 0 auto;
+            margin-top: 20px;
+            border-radius: 50px;
+            background-color: #ffde7a;
+            color: black;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            transform: scale(1.03, 1.06);
+            transition-duration: 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="a_main.html"><img src="/Media/Images/Project/Icon/gori-gold.png" width="120px"></a>
+        <h1>프로필 생성하기</h1>
+        <h3>거의 다 됐습니다!</h3>
+    </header>
+    <main>
+        <!--
+            닉네임과 프로필 사진 등 여러 정보를 입력 후 formCheck 통과하면 main-after.html로 연결
+        -->
+        <form id="profileForm" name="profileForm" action="A_main-after.html" onsubmit="return formCheck()">
+            <div id="firstDiv">
+                <div id="imagePreview" onclick="document.getElementById('imageInput').click()"></div>
+                <!--
+                    element.click()은 강제로 클릭 이벤트를 발생시키는 함수 -> imageInput의 클릭 이벤트를 발생시켜 파일 선택창을 열게 함
+                    파일을 선택하면 imageInput의 입력값이 변하면서 onchange 이벤트가 발생, loadFile() 함수가 실행된다
+                -->
+                <input type="file" accept="image/*" id="imageInput" name="profileImage" onchange="loadFile(event)">
+                <!--
+                    loadFile(event) 함수에서 event는 파일 입력 요소에서 발생하는 이벤트 객체를 가리킴
+                    이벤트 객체는 이벤트가 발생했을 때 브라우저가 자동으로 생성하는 객체로, 이벤트와 관련된 다양한 정보를 포함
+                    이 이벤트 객체를 loadFile 함수에 넘겨주면서 이벤트가 발생한 요소에 관한 다양한 처리가 가능, 이 때 loadFile()을 이벤트 핸들러라고 함
+                -->
+                <label>닉네임<input type="text" id="myName" name="myName"></label>
+            </div>
+
+            <fieldset>
+                <legend><h3>취향껏 골라주세요</h3></legend>
+                <h4>장르</h4>
+                <div id="genreDiv">
+                    <label class="genreLabel"><input type="checkbox" class="genreCheckBox" name="favoriteGenre" value="ballad">발라드</label>
+                    <label class="genreLabel"><input type="checkbox" class="genreCheckBox" name="favoriteGenre" value="hiphop">힙합</label>
+                    <label class="genreLabel"><input type="checkbox" class="genreCheckBox" name="favoriteGenre" value="rock">락</label>
+                    <label class="genreLabel"><input type="checkbox" class="genreCheckBox" name="favoriteGenre" value="dance">댄스</label>
+                    <label class="genreLabel"><input type="checkbox" class="genreCheckBox" name="favoriteGenre" value="pop">팝</label>
+                    <label class="genreLabel"><input type="checkbox" class="genreCheckBox" name="favoriteGenre" value="rnb">R&B</label>
+                    <label class="genreLabel"><input type="checkbox" class="genreCheckBox" name="favoriteGenre" value="disco">디스코</label>
+                    <label class="genreLabel"><input type="checkbox" class="genreCheckBox" name="favoriteGenre" value="funk">펑크</label>
+                    <label class="genreLabel"><input type="checkbox" class="genreCheckBox" name="favoriteGenre" value="jazz">재즈</label>
+                    <label class="genreLabel"><input type="checkbox" class="genreCheckBox" name="favoriteGenre" value="class">클래식</label>
+                </div>
+                <h4>아티스트</h4>
+                <div id="artistDiv">
+                    미구현
+                </div>
+                <h4>분위기</h4>
+                <div id="songDiv">
+                    미구현
+                </div>
+            </fieldset>
+
+            <div id="lastDiv">
+                <span>할 말</span>
+                <br>
+                <textarea  id="greetings" name="greetings"></textarea>
+            </div>
+
+            <input type="submit" value="완료!"></input>
+        </form>
+    </main>
+    <script>
+        const myNameEle = document.getElementById("myName");
+        const genreEle = document.getElementsByClassName("genreCheckBox");
+        const genreLabelEle = document.getElementsByClassName("genreLabel");
+
+        /* 장르를 누르면 배경색이 바뀌고 연결된 checkbox가 checked 됨 */
+        for(let i=0; i<genreEle.length; i++) {
+        genreLabelEle[i].addEventListener("click", function() {
+                if(genreEle[i].checked) {
+                    genreEle[i].checked=false;
+                    genreLabelEle[i].style.backgroundColor="#ffde7a8e";
+                }
+                else {
+                    genreEle[i].checked=true;
+                    genreLabelEle[i].style.backgroundColor="#ffde7a";
+                }
+            });
+        }
+        /* imagePreview Div를 클릭 후 이미지파일을 선택하면 파일의 URL을 생성해 Div의 배경이미지로 만듦 */
+        function loadFile(event) {
+            var imagePreview = document.getElementById('imagePreview');
+            imagePreview.style.backgroundImage = "url(" + URL.createObjectURL(event.target.files[0]) + ")";
+        }
+        /* 
+            event.target.files[0] -> event.target은 이벤트가 발생한 요소를 가리킴, 여기서는 파일 입력요소(input type=file)를 의미
+            파일입력은 filelist라는 타입의 파일 객체 배열을 생성하는데, 선택한 파일 객체에 [0]로 접근한 것
+
+            URL.createObjectURL 메서드는 선택한 파일을 웹 브라우저에서 미리보기 등의 목적으로 사용할 수 있도록 임시 URL을 생성하는 기능을 제공함
+            URL은 브라우저가 메모리에서 해당 파일을 참조할 수 있게 해주며, 이를 통해 파일을 로컬에서 읽거나 표시할 수 있음
+            즉 이벤트가 일어난 요소의 첫번째 파일 객체를 URL로 만들고, 그것을 imagePreview Div의 backgroundImage로 만든 것
+         */
+
+        function formCheck() {
+            if(myNameEle.value.length != 0) return true;
+            return false;
+        }
+    </script>
+</body>
+</html>

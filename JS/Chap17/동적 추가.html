@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <h1>DOM을 공부합시다</h1>
+        <a href="#" id="see">더보기</a>
+        <div id="info"></div>
+    </div>
+    <script>
+        let see = document.getElementById("see");
+        see.addEventListener('click',addP,{once:true});
+        // 이벤트 함수를 한번만 실행하고 싶다면, addEventListener에서 세번째 매개변수로 once:true 속성 추가
+
+        function addP() {
+            // 요소 노드 생성
+            var newP = document.createElement("p");
+            // 텍스트 노드 생성 (내용)
+            var txtNode = document.createTextNode("DOM은 Document Obkect Model의 줄임말입니다")
+            // 요소 노드와 텍스트 노드 연결
+            newP.appendChild(txtNode);
+            // id가 info 노드의 자식노드로 연결
+            //document.getElementById("info").appendChild(newP);
+            document.getElementById("info").appendChild(newP);
+        }
+        function addContents() {
+            var newP = document.createElement("p");
+            var txtNode = document.createTextNode("DOM은 줄임말입니다.")
+            newP.appendChild(txtNode);
+        }
+
+        // 요소 노드 추가
+        var newImg = document.createElement('img');
+        // 속성 노드 추가
+        var srcNode = document.createAttribute("src");
+        var altNode = document.createAttribute("alt");
+
+        // 속성값은 value 프로퍼티를 사용해 지정
+        srcNode.value = "/Media/Images/Tree_Slow.jpg";
+        altNode.value = "돔 트리 예제 이미지";
+
+        newImg.setAttributeNode(srcNode);
+        newImg.setAttributeNode(altNode);
+
+        // 자식 노드로 연결
+        document.getElementById("info").appendChild(newP);
+        document.getElementById("info").appendChild(newImg);
+
+    </script>
+</body>
+</html>

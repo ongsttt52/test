@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        *{
+            margin: 5px;
+        }
+        .on{            
+            background: #ff6600;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="m1">
+        <button>클릭1</button>
+    </div>
+    <div id="m2">
+        <button>클릭2_1</button>
+        <button>클릭2_2</button>
+    </div>
+    <div id="m3">
+        <button>클릭3</button>
+    </div>
+    <div id="m4">
+        <button>클릭4</button>
+    </div>
+    <div id="m5">
+        <button>클릭5</button>        
+    </div>
+    <div id="m6">
+        <button>클릭6</button>        
+    </div>
+    <div id="m7">
+        <p>클릭7</p>        
+    </div>
+    <p>p태그</p>
+    <button id="clickDel">클릭이벤트제거</button>
+    <script>
+        $("#m1 button").on("click", function() {
+            alert("이벤트 연결1");
+        });
+        $("#m2").on("click", "button", function() {
+            alert("이벤트 연결2");
+        }); // #m2의 하위요소 button 요소에 click 이벤트를 연결
+        $("#m3 button").on({
+            mouseenter : function() {
+                $(this).toggleClass("on");
+            }, mouseleave : function() {
+                $(this).toggleClass("on");
+            }
+        });
+        function showEvent() {
+            alert("이벤트 연결3")
+        }
+        $("#m4 button").on("click", showEvent);
+        $("#m5 button").on("click", function() {
+            alert("이벤트 제거");
+        }).off(); // off() 때문에 이벤트가 제거되어 alert가 작동하지 않음
+        $("#m6 button").one("click", function() {
+            alert("이벤트 한번만 연결")
+        });
+        $("#m7").on("click", function() {
+            console.log($("p", this))
+            // $(this).find("p") 와 동일한 의미
+            // p를 찾는 범위가 this로 제한됨
+            $("p", this).css("background", "#ff0000");
+        });
+
+        //m5 button에 click 이벤트를 연결한 후 off()로 제거함 -> 버튼을 클릭하여도 이벤트가 발생되지 않음
+
+        // m6 버튼에 one 함수로 이벤트 연결 -> 이벤트 한 번 발생 후 다시 클릭해도 이벤트가 발생되지 않음, 이벤트가 한번만 열결됨
+
+        // m7에 click이벤트가 발생되었을 때, css함수 적용 범위를 $("p", this)로 설정 -> 즉, $(this).find("p")와 동일한 의미로, m7의 하위요소 p요소에 배경색을 지정함
+    </script>
+</body>
+</html>

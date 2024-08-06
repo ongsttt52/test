@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper{
+            display:grid;
+            grid-template-columns: 200px 200px 200px;
+
+            grid-template-rows: 100px 100px;
+        }
+        .items{
+            padding:10px;
+            background-color: #eee;
+        }
+        .items:nth-child(odd) {/*홀수번째 요소에 적용 / 짝수는 even*/
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+#container{
+    width:1200px;
+    text-align: center;
+}
+#header{
+    height: 120px;
+    border:1px solid black;
+}
+#sidebar1{
+    height: 600px;
+    float:left;
+    border:1px solid black;
+}
+#sidebar2{
+    width: 150px;
+    height: 600px;
+    float:left;
+    border:1px solid black;
+}
+#contents{
+    width: 800px;
+    height: 600px;
+    float:left;
+    border:1px solid black;
+}
+#footer{
+    width: 1200px;
+    height: 100px;
+    clear:both;
+    border:1px solid black;
+}

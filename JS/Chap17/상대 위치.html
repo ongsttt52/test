@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <nav id="gnb">
+            <ul>
+                <li class="first">내용1</li>
+                <li>내용2</li>
+                <li>내용3</li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        window.onload = function(){
+            var gnb = document.getElementById('gnb');
+            console.log(gnb.parentNode); // div
+            console.log(gnb.children[0]); //ul
+            console.log(gnb.children[0].children[0]); // <li class="first">내용1</li>
+            console.log(gnb.children[0].children[0].nextElementSibling); //<li> 내용2</li>
+            console.log(gnb.children[0].children[2].previousElementSibling); // <li>내용2</li>
+            console.log(gnb.children[0].firstChild); // #text (텍스트노드) (띄어쓰기도 노드로 취급)
+            console.log(gnb.children[0].lastChild); // #text
+            console.log(gnb.children[0].tagName); // ul
+            console.log(gnb.children[0].children[0].firstChild.nodeValue); // 내용1
+            console.log(gnb.children[0].children[0].nodeType); //1(요소)
+            console.log(gnb.id);//gnb
+            console.log(gnb.children[0].children[0].className);//first
+        }
+    </script>
+    </script>
+</body>
+</html>

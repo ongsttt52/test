@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calcSum(n) {
+            let sum = 0;
+            for(let i=1; i<n+1; i++) {
+                sum += i;
+            }
+            console.log(sum);
+        }
+        calcSum(10)
+        //console.log(i) -> Uncaught 오류발생 (sum, i는 let에 의해 블록레벨에서만 존재하기 때문)
+        //console.log(sum)
+
+        function calcSum2(n) {
+            var sum = 0;
+            for(i=1; i<n+1; i++) {
+                sum += i;
+            }
+            console.log(sum);
+        }
+        calcSum2(20);
+        console.log(i); // i는 전역변수이기때문에 함수 밖에서도 존재함 -> 오류 발생 x
+
+        // let의 특징 : 재할당은 가능하나 재선언은 불가능 -> 같은 이름의 변수 선언 방지
+        // 호이스팅 불가능
+
+        // Const -> 상수, 재할당 재선언 불가
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border:2px solid #000;
+            margin-bottom: 20px;
+            width:200px;
+            height: 100px;
+            margin:15px;
+            border:1px solid blue;
+            border: radius 20px;
+        }
+        .box1 {
+            width: 400px;
+            height: 100px;
+        }
+        .box2 {
+            width: 50%; /*가변 너비 - 웹브라우저의 50%*/
+            height: 100px; /*고정 높이*/
+        }
+        .box3 {
+            box-shadow:2px -2px 5px 0px;
+        }
+        .box4 {
+            box-shadow: 5px 5px 15px 5px blue;
+        } /*박스 그림자 : 가로 세로 흐림 번짐 색상*/
+        .box5 {
+            width: 200px;
+            height: 100px;
+            margin:15px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 100px;
+            border-width: 5px 10px 5px 10px; /* top - right - bottom - left */
+            border-width: 5px 10px 5px; /* top - right - bottom - (left는 마주보고 있는 right와 같게 설정됨) */
+            border-top-style: solid;
+            border-right-style: dotted;
+            border-bottom-style: dashed;
+            border-left-style: double;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    ----------------------------------------    
+</body>
+</html>

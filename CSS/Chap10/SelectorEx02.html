@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div h1:only-of-type{
+            color:red;
+        }
+        /*div의 자손중 모든 h1 요소에만 적용됨*/
+        div h1:only-child{
+            color:blue;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+    <p>단락</p>
+    <h1>제목</h1>
+</div>
+</body>
+</html>

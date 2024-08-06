@@ -1,0 +1,84 @@
+*{
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border-radius:10px;
+}
+img{
+    width: 20px;
+    margin-bottom: -5px;
+    vertical-align: middle; /*인라인 레벨 요소의 상자를 포함하는 라인 상자 안에 수직으로 정렬함 / 이미지 수직 정렬에 사용*/
+}
+.font1{
+    font-size:14px;
+    font-weight:bold;
+    color:#504444;
+}
+.font2{
+    text-align: center;
+    color:#2C3432;
+    font-size: 14px;
+}
+.div1{
+    border:1px solid rgb(207, 201, 201);
+    width: 304px;
+    height: 390px;
+    padding: 28px;
+    margin:100px auto;
+    box-shadow:3px 3px 3px 3px rgb(221, 214, 214);
+}   
+form{
+    margin:0 auto;
+    width:228px;
+    height: 148px;
+    padding:28px 38px;
+}
+
+.container-button1{
+    background-color: rgb(252, 252, 252);
+    border:1px solid rgb(201, 197, 197);
+    box-shadow: 3px 3px 3px rgb(222,222,222);
+    width: 100%;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    cursor:pointer;
+}
+
+.container-or{
+    width: 100%;
+    height: 20px;
+    margin-top:24px;
+    font-size:16px;
+    font-weight:bold;
+    color:#504444;
+    text-align: center;
+}
+.container-username{
+    box-sizing: border-box;
+    width: 100%;
+    height: 44px;
+    border:1px solid rgb(206, 196, 196);
+    background-color: #eaeaea;
+    color: #504444;
+    padding:10px;
+    margin-bottom: 21px;
+    outline: none;
+}
+.container-login{
+    box-sizing: border-box;
+    width:100%;
+    height: 44px;
+    margin-bottom:28px;
+    background-color: 373F3C;
+    font-size: 14px;
+    border:1px solid rgb(200,200,200);
+    box-shadow: 3px 3px 3px rgb(222,222,222);
+    color:#2C3432;
+    cursor:pointer;
+}
+a { text-decoration: none; color: #2C3432; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:focus { text-decoration: none; }
+a:hover, a:active { text-decoration: none; }

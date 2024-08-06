@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            var detachDiv
+            $("button:eq(0)").click(function() {
+                $("m1 a").removeAttr("href"); // a태그에서 href 속성 삭제
+                $("#m2").empty(); // m2의 하위요소 전부 삭제
+                $("#m3").remove(); // m3 요소 자체를 삭제
+                detachDiv = $("#m4").detach(); // remove처럼 삭제는 되지만 다시 사용가능
+            });
+            $("button:eq(1)").click(function() {
+                detachDiv.insertAfter("#m2"); // detach된 요소 재사용
+            });
+        })
+    </script>
+    <div id="m1"><a hrfe="#">링크</a></div>
+    <div id="m2">
+        <span>내용1</span>
+    </div>
+    <div id="m3">
+        <span>내용2</span>
+    </div>
+    <div id="m4">
+        <span>내용3</span>
+    </div>
+    <button>삭제</button>
+    <button>detach</button>
+</body>
+</html>

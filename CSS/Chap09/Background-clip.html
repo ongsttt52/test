@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .desc{
+            border:5px dotted black;
+            background-color: #ffd9a0;
+            width: 350px;
+            padding: 20px;
+            margin-right: 20px;
+            
+        }
+        #clip-border {
+            background-clip: border-box; /*테두리까지 배경 지정*/
+        }
+        #clip-padding{
+            background-clip: padding-box; /*테두리를 뺀 패딩범위까지 배경 지정*/
+        }
+        #clip-content{
+            background-clip: content-box; /*콘텐츠안에만 배경 지정*/
+        }
+    </style>
+</head>
+<body>
+    <div class="desc" id="clip-border">
+        <h1>레드향</h1>
+        <p>껍질에 붉은 빛이 돌아...</p>
+    </div>
+    <div class="desc" id="clip-padding">
+        <h1>레드향</h1>
+        <p>껍질에 붉은 빛이 돌아...</p>
+    </div>
+    <div class="desc" id="clip-content">
+        <h1>레드향</h1>
+        <p>껍질에 붉은 빛이 돌아...</p>
+    </div>
+    
+</body>
+</html>

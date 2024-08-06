@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            background-color: #ccc;
+            height: 50px;
+            line-height: 50px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>당첨자 발표</h1>
+
+    <script>
+        var num = prompt("전체 응모자 수 : ");
+        var winner = prompt("당첨자 수 : ");
+        function draw(num, winner) {
+            var winnerArr=Array('1');
+            for(let i=1; i<=winner; i++) {
+            winnerArr[i-1] = Math.floor(Math.random()*num)+1;
+            }
+            document.write("전체 응모자 수 : " + num + "명<br>");
+            document.write("당첨자 : " + winnerArr.join());
+        }
+        draw(num,winner);
+    </script>
+</body>
+</html>

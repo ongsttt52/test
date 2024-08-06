@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function() {
+            $("#m1").prepend("<p>삽입1_1</p>"); // 첫번째 자식요소 삽입
+            $("#m1").append("<p>삽입1_2</p>"); // 마지막 자식요소로 삽입
+            $("#m1").before("<p>삽입1_3</p>");  // A.before(B) -> A 뒤에 B 삽입
+            $("#m1").after("<p>삽입1_4</p>");
+            $("<p>삽입2_1</p>").prependTo("#m2");
+            $("<p>삽입2_2</p>").appendTo("#m2");
+            $("<p>삽입2_3</p>").insertBefore("#m2"); // A.insertBefore(B) -> B 뒤에 A 삽입
+            $("<p>삽입2_4</p>").insertAfter("#m2");
+        })
+    </script>
+    <div id="m1"><strong>내용1</strong></div>
+    <div id="m2"><strong>내용2</strong></div>
+</body>
+</html>

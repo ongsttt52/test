@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표만들기실습</title>
+    <style> 
+        table, th, td {
+          border:1px solid #000000;
+          border-collapse: collapse;
+        }
+        th, td {
+            padding:10px 20px; 
+        }
+        </style>
+        
+</head>
+<body>
+    <h2>먹거리</h2>
+    <table>
+        <tr>
+            <td>입춘 천냥 국수</td>
+            <td>11:00 ~ 16:00</td>
+            <td>목관아 주차장</td>
+        </tr>
+        <tr>
+            <th>제주 향토 음식</th>
+            <th>10:30 ~ 17:00</th>
+            <th>관덕정 마당</th>
+        </tr>
+        <tr>
+            <th>입춘 주전부리</th>
+            <th>10:30 ~ 17:00</th>
+            <th>관덕정 마당</th>
+        </tr>
+        <tr>
+            <th>차 나눔</th>
+            <th>10:30 ~ 17:00</th>
+            <th>관덕정 마당</th>
+        </tr>
+    </table>
+    <h2>먹거리</h2>
+    <table>
+        <colspan>
+            <col style = "background-color : #1cd6ae;">
+            <col>
+            <col> 
+        </colspan>
+        <tr>
+            <th>입춘 천냥 국수</th>
+            <th >11:00 ~ 16:00</th>
+            <th>목관아 주차장</th>
+        </tr>
+        <tr>
+            <th>제주 향토 음식</th>
+            <th rowspan="3">10:30 ~ 17:00</th>
+            <th rowspan="3">관덕정 마당</th>
+        </tr>
+        <tr>
+            <th>입춘 주전부리</th>
+        </tr>
+        <tr>
+            <th>차 나눔</th>
+        </tr>
+    </table>
+</body>
+</html>

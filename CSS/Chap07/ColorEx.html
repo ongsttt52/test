@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            color:#0000ff; /* 16진수 표기법 */
+        }
+        p { 
+            color:green; /* 색상 이름 */
+        }
+        .accent {
+            color:hsl(0, 100%, 50%); /* hsl 표기법 (색상,채도,명도)*/ 
+            font-weight:bold;
+        }
+        body {
+            background:url('../cat.jpg') no-repeat fixed; /*반복하지 않음*/
+            background-size:cover;
+            text-align:center;
+        }
+        h1 {
+            font-size: 160px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .color1 {
+            color:rgb(255, 255, 255)
+        }
+        .color2 {
+            color:rgb(255, 255, 255, 0.5) /* 마지막 알파값 = 투명도 조절 */
+        }
+    </style>
+</head>
+<body>
+    <h1>레드향</h1>
+    <p>껍질에 붉은 빛이 돌아 <span class="accent">레드향</span>이라 불린다.</p>
+
+    <h1 class="color1">HTML</h1>
+    <h2 class="color2">CSS</h2>
+</body>
+</html>

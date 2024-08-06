@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS Grid Layout</title>
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    #wrapper{
+      display:grid;
+      grid-template-columns:repeat(3, 200px);  /* 너비 200px인 칼럼 3개 */
+      grid-template-rows: repeat(2,minmax(300px, auto));  
+      /* grid-template-rows: minmax(300px, auto) minmax(300px auto);   */
+      /* 칼럼 간격 30px, 줄 간격 20px  */
+      grid-gap:20px 30px;  
+      /* grid-column-gap:30px; */
+      /* grid-row-gap:20px; */
+    
+    }
+    .items{
+      padding:15px;
+      background-color:#eee;
+    }   
+    .items:nth-child(odd){
+      background-color:#bbb;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <div class="items">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta nesciunt magni voluptatem.</div>
+    <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+    <div class="items">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius nulla corrupti porro!</div>
+    <div class="items">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta nesciunt magni voluptatem.</div>
+    <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+    <div class="items">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius nulla corrupti porro!</div>
+  </div>
+</body>
+</html>

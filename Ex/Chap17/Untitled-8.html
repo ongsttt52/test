@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="register" action="registerProcess.jsp"  method="post" onsubmit="return formCheck(this)">
+        <table>
+            <tr>
+                <th width="200">수강월</th>
+                <td><input type="text" name="regist_month"> 2022년03월 예)202203 </td>
+            </tr>
+            <tr>
+                <th>회원명</th>
+                <td>
+                    <select id="c_name" name="c_name" onchange="fn1(this)" >
+                        <option value="">회원명</option>
+                        <option value="10001">홍길동</option>
+                        <option value="10002">장발장</option>
+                        <option value="10003">임꺽정</option>
+                        <option value="20001">성춘향</option>
+                        <option value="20002">이몽룡</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>회원번호</th>
+                <td><input id="c_no" type="text" name="c_no" readonly> 예)10001 </td>
+            </tr>
+            <tr>
+                <th>강의장소</th>
+                <td>
+                    <input id="calss_area1" type="radio" name="class_area" value="서울본원"><label for="class_area1">서울본원</label>					
+                    <input id="calss_area2" type="radio" name="class_area" value="성남분원"><label for="class_area2">성남분원</label>					
+                    <input id="calss_area3" type="radio" name="class_area" value="대전분원"><label for="class_area3">대전분원</label>					
+                    <input id="calss_area4" type="radio" name="class_area" value="부산분원"><label for="class_area4">부산분원</label>					
+                    <input id="calss_area5" type="radio" name="class_area" value="대구분원"><label for="class_area5">대구분원</label>					
+                </td>
+            </tr>
+            <tr>
+                <th>강의명</th>
+                <td>
+                    <select name="class_name" id="class_name">
+                        <option value="">강의신청</option>
+                        <option value="100000">초급반</option>
+                        <option value="200000">중급반</option>
+                        <option value="300000">고급반</option>
+                        <option value="400000">심화반</option>
+                    </select>					
+                </td>
+            </tr>
+            <tr>
+                <th>수강료</th>
+                <td><input type="text" name="tuition" id="tuition" readonly>원</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="submit" value="수강신청">
+                    <input type="reset" onclick="resetClick()" value="다시쓰기">
+                </td>
+            </tr>	
+        </table>
+    </form>
+
+    <script>
+        function fn1(sel) {
+            let cno = document.querySelector("#c_no");
+            cno.value = sel.value;
+            // 수강료 초기화
+            document.querySelector("#class_name").value="";
+            document.querySelector("#tuition").value="";
+        }
+
+        document.querySelector("#class_name").addEventListener("cange",fn2);
+        function fn2(event){
+            let tu=document.querySelector("#tuition");
+
+            if(document.querySelector("#c_name").value>20000) {
+                tu.value=this.value*0.5
+            }
+            else {
+                tu.value=this.value;
+            }
+
+        }
+        function formCheck(frm) {
+            if(frm.regist_month.value=="") {
+                alert("수강월이 입력되지 않았습니다")
+                frm.regist_month.focus();
+                return false;
+            }
+            else if(frm.c_name.value=="") {
+                alert("회원명이 선택되지 않았습니다")
+                return false;
+            }
+            else if(frm.class_area.value=="") {
+                alert("강의 장소가 선택되지 않았습니다");
+                return false;
+            }
+        }
+
+        function resetClick() {
+            alert("정보를 다시 입력해주세요")
+            document.register.regist_month.focus();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>배송정보</legend>
+            <ul>
+                <li>
+                    <label for="prod">주문상품</label>
+                    <input type="text" value="상품용 3kg" readonly id="prod"> <!-- 상품용 3kg으로 값이 고정됨(변경 불가) -->
+                </li>
+                <li>
+                    <p><label>이름 <input type="text" autofocus required size="40"> <!-- 필수 입력 요소 -->
+                </label></p></li>
+                <li>
+                <p><label for="phone"> 연락처</label>
+                <input type="tel" id="phone" placeholder="하이픈 빼고 입력해주세요" size="40" required></p>
+                </li>
+            </ul>
+            <input type="submit" value="주문하기">
+            <input type="reset" value="초기화">
+        </fieldset>
+    </form>
+</body>
+</html>
